@@ -51,12 +51,43 @@ function createUserRolCommon(username, password, name, lastname, direction, tel)
     tel
   );
 }
+function updateUser(
+ 
+  username,
+   password,
+    name, 
+    lastname,
+     rol,
+      direction,
+       tel
+) {
+  const users = getUsers();
+  if (users !== null && users.length > 0) {
+    let index = users.findIndex(function (user) {
+      return user.username === username;
+    });
+    let user = users[index];
+    user.username = username;
+    user.password=password;
+    user.name = name;
+    user.lastname = lastname;
+    user.rol = rol;
+    user.direction = direction;
+    user.tel=tel;
+    users[index] = user;
+    SetItem(LOCAL_STORAGE_KEYS.user, users);
+  }
+}
 
+function getUserByUsername(username) {
+  const users = getUsers();
+  return users.find((user) => user.username === username);
+}
 function getArrayAndReplace(newUser) {
   // Traer el array del local storage
   let users = getUsers();
 
-  // En caso de que no exista ningún elemento creado, convertirlo en array
+  
  
 
   // Almacenamos el nuevo usuario en el array
@@ -104,4 +135,4 @@ function logout() {
 }
 //#endregion Login and Logout
 
-export { createUser, login, logout, createUserRolCommon, getUsers };
+export { createUser, login, logout, createUserRolCommon, getUsers,updateUser,getUserByUsername};
