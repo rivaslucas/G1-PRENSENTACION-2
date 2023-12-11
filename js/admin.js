@@ -1,11 +1,11 @@
 import { getEmojiText } from "./helpers/string.helper.convert.js";
 import {
-  createSeminar,
-  deleteSeminar,
-  getSeminarById,
-  updateSeminar,
-  getSeminars,
-} from "./services/seminars.app.js";
+  createProduct,
+  deleteProduct,
+  getProductById,
+  updateProduct,
+  getProducts,
+} from "./services/products.app.js";
 import { getUsers } from "./services/user.app.js";
 import { GetItem } from "../js/services/local-storage.app.js";
 import { LOCAL_STORAGE_KEYS } from "./configurations/keys.config.js";
@@ -19,31 +19,36 @@ if ((userLogged && userLogged.rol.id !== ROLES_VALUES.ADMIN) || !userLogged) {
 
 //#region HTML  References
 const usersTable = document.getElementById("users-table");
-const seminarsTable = document.getElementById("seminars-table");
-const deleteSeminarBtn = document.getElementById("deleteSeminar");
+const productsTable = document.getElementById("products-table");
+const deleteProductBtn = document.getElementById("deleteProduct");
 
 //#region  Create
 
-const createTitle = document.getElementById("createTitle");
-const createDescription = document.getElementById("createDescriptionTxtArea");
+const createName = document.getElementById("createName");
+const createDescription = document.getElementById("createDescription");
+const createPrice = document.getElementById("createPrice");
 const createPicture = document.getElementById("createPicture");
-const createDifficult = document.getElementById("createDifficult");
-const createStars = document.getElementById("createStars");
+const createDistributor = document.getElementById("createDistributor");
+const createQuantity = document.getElementById("createQuantity");
+const createCategory = document.getElementById("createCategory");
 
-let _createTitle =createTitle.value,
+let _createName =createName.value,
   _createDescription=createDescription.value,
+  _createPrice=createPrice.value,
   _createPicture=createPicture.value,
-  _createDifficult=createDifficult.value,
-  _createStars=createStars.value;
+  _createDistributor=createDistributor.value,
+  _createQuantity=createQuantity.value,
+  _createCategory=createCategory.value;
 //#endregion
 
 //#region  Update
-const updateSeminarBtn = document.getElementById("update");
+const updateProductBtn = document.getElementById("update");
+const updateName = document.getElementById("name");
+const updateDescription = document.getElementById("description");
 const updatePicture = document.getElementById("picture");
-const updateDifficult = document.getElementById("difficult");
-const updateStars = document.getElementById("stars");
-const updateDescription = document.getElementById("descriptionTxtArea");
-const updateTitle = document.getElementById("title");
+const updateDistributor = document.getElementById("distributor");
+const updateQuantity = document.getElementById("quantity");
+const updateCategory = document.getElementById("category");
 //#endregion
 
 //#endregion HTML References
@@ -52,11 +57,11 @@ const updateTitle = document.getElementById("title");
 
 let data = {
   users: [],
-  seminars: [],
+  products: [],
 };
 
 let currents = {
-  seminar: {},
+  product: {},
   user: {},
 };
 
@@ -66,32 +71,33 @@ let currents = {
 
 //#region  Init Data
 refresh(refreshUsers);
-refresh(refreshSeminars);
+refresh(refreshProducts);
 //#endregion Init Data
 
 //#region  Events
 
 deleteSeminarBtn.addEventListener("click", () => {
-  deleteSeminar(currents.seminar.id);
+  deleteProduct(currents.product.id);
   window.location.reload();
 });
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const addSeminarForm = document.getElementById("seminaradd");
+  const addProductForm = document.getElementById("productadd");
 
-  if (addSeminarForm) {
-    addSeminarForm.addEventListener("submit", function (e) {
+  if (addProductForm) {
+    addProductForm.addEventListener("submit", function (e) {
       // Get the values from the form
-      const _createTitle = createTitle.value;
+      const _createName = createName.value;
       const _createDescription = createDescription.value;
-      const _createPicture =createPicture.value;
-      const _createDifficult = createDifficult.value;
-      const _createStars = createStars.value;
-
+      const _createPrice = createPrice.value;
+      const _createPicture = createPicture.value;
+      const _createDistributor = createDistributor.value;
+      const _createQuantity = createQuantity.value;
+      const _createCategory = createCategory.value;
       // Perform validation
      
-       createSeminar(_createTitle,_createDescription,'123','19:00',_createPicture,_createStars,_createDifficult);
+       createProduct(_createName,_createDescription,_createPrice,_createPicture,createDistributor,_createQuantity,_createCategory);
      
     });
   }
