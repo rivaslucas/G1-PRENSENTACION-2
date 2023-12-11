@@ -1,11 +1,10 @@
-//crear usuario (registro), login, logout
 import { SetItem, GetItem, RemoveItem } from "./local-storage.app.js";
 import { LOCAL_STORAGE_KEYS } from "../configurations/keys.config.js";
 import { ERROR_MESSAGES } from "../configurations/messages.config.js";
 import { GetError } from "../helpers/error.helpers.js";
 import { INITIAL_ROLES, ROLES_VALUES } from "../configurations/seed.js";
 
-//#region  Errores
+//#region Errores
 function GetErrorNotFound() {
   return GetError(ERROR_MESSAGES.not_found);
 }
@@ -15,57 +14,71 @@ function GetErrorNotMatch() {
 }
 //#endregion
 
-//#region  Get User (R - Read - Leer)
+//#region Get Users (R - Read - Leer)
 function getUsers() {
-  return GetItem(LOCAL_STORAGE_KEYS.user);
+  return GetItem(LOCAL_STORAGE_KEYS.user) || [];
 }
 //#endregion
+//#region Validar existencia de usuario
+function isUserExist(username) {
+  let users = getUsers();
+  let userExist = users.find((user) => user.username === username);
 
-//#region  Add User (A - Alta)
-function createUser(username, password, name, lastname, rol) {
-  let users = getArrayAndReplace({ username, password, name, lastname, rol });
-  //guardamos el array en el local storage
-  SetItem(LOCAL_STORAGE_KEYS.user, users);
+  if (userExist) {
+    alert(ERROR_MESSAGES.duplicate_username);
+    return true;
+  }
+  return false;
+}
+function createUser(username, password, name, lastname, rol, direction, tel) {
+  if (!isUserExist(username)) {
+    const newUser = { username, password, name, lastname, rol, direction, tel };
+    let users = getArrayAndReplace(newUser);
+
+    // Guardamos el array en el local storage
+    SetItem(LOCAL_STORAGE_KEYS.user, users);
+  }
 }
 
-function createrUserRolCommon(username, password, name, lastname) {
+function createUserRolCommon(username, password, name, lastname, direction, tel) {
   createUser(
     username,
     password,
     name,
     lastname,
-    INITIAL_ROLES.find((rol) => rol.id === ROLES_VALUES.CONCURRENTE)
+    INITIAL_ROLES.find((rol) => rol.id === ROLES_VALUES.CLIENTE),
+    direction,
+    tel
   );
 }
 
 function getArrayAndReplace(newUser) {
-  //traer el array convertido en array
+  // Traer el array del local storage
   let users = getUsers();
-  //en caso de que no exista ningún elemento creado lo convertir en array
-  if (users === null) {
-    users = [];
-  }
 
-  //almacenamos el nuevo usuario en el array
+  // En caso de que no exista ningún elemento creado, convertirlo en array
+ 
+
+  // Almacenamos el nuevo usuario en el array
   users.push(newUser);
 
-  //retornamos el arary con el usuario agregado
+  // Retornamos el array con el usuario agregado
   return users;
 }
 //#endregion
 
-//#region  Login and Logout
+//#region Login and Logout
 function login(username, password) {
-  //verificar si el usuario existe
-  //comparar en la base de datos si existe un
-  //usuario con el mismo username y la misma contraseña
+  // Verificar si el usuario existe
+  // Comparar en la base de datos si existe un
+  // usuario con el mismo username y la misma contraseña
   let users = getUsers();
 
-  if (users === null) {
+  if (!Array.isArray(users)) {
     return GetErrorNotFound();
   }
 
-  //predicate -> condición
+  // Predicate -> condición
   let userFound = users.find((user) => user.username === username);
 
   if (!userFound) {
@@ -76,18 +89,19 @@ function login(username, password) {
     return GetErrorNotMatch();
   }
 
-  SetItem(LOCAL_STORAGE_KEYS.activeUser, userFound);
-  delete userFound.password;
+  // Eliminamos la propiedad "password" antes de almacenar el usuario activo
+  const { password: _, ...userWithoutPassword } = userFound;
+  SetItem(LOCAL_STORAGE_KEYS.activeUser, userWithoutPassword);
+
   return {
     ok: true,
-    user: userFound,
+    user: userWithoutPassword,
   };
 }
 
 function logout() {
   RemoveItem(LOCAL_STORAGE_KEYS.activeUser);
 }
-
 //#endregion Login and Logout
 
-export { createUser, login, logout, createrUserRolCommon, getUsers };
+export { createUser, login, logout, createUserRolCommon, getUsers };

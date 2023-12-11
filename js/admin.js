@@ -9,7 +9,7 @@ import {
 import { getUsers } from "./services/user.app.js";
 import { GetItem } from "../js/services/local-storage.app.js";
 import { LOCAL_STORAGE_KEYS } from "./configurations/keys.config.js";
-import { ROLES_VALUES } from "./configurations/seed.js";
+import { ROLES_VALUES,INITIAL_ROLES } from "./configurations/seed.js";
 
 const userLogged = GetItem(LOCAL_STORAGE_KEYS.activeUser);
 
@@ -21,6 +21,9 @@ if ((userLogged && userLogged.rol.id !== ROLES_VALUES.ADMIN) || !userLogged) {
 const usersTable = document.getElementById("users-table");
 const productsTable = document.getElementById("products-table");
 const deleteProductBtn = document.getElementById("deleteProduct");
+
+
+
 
 //#region  Create
 
@@ -222,5 +225,51 @@ function refreshSeminars() {
     });
   }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const addUserForm = document.getElementById("userAdd");
+
+  if (addUserForm) {
+    addUserForm.addEventListener("submit", function (e) {
+  // Evitar el comportamiento predeterminado del formulario
+
+      const userRolSelect = document.getElementById("createRol");
+      const selectedOption = userRolSelect.options[userRolSelect.selectedIndex];
+      const selectedRoleId = selectedOption.value;
+
+      // Obtener los valores del formulario
+      const _createUsername = document.getElementById("createUsername").value;
+      const _createPass = document.getElementById("createPass").value;
+      const _createRePass = document.getElementById("createRePass").value;
+      const _createName = document.getElementById("createName").value;
+      const _createLastname = document.getElementById("createLastname").value;
+      const _createDirection = document.getElementById("createDirection").value;
+      const _createTel = document.getElementById("createTel").value;
+
+      console.log(
+        _createUsername,
+        _createPass,
+        _createName,
+        _createLastname,
+        _createDirection,
+        _createTel,
+        selectedRoleId,
+      );
+
+      if (_createPass === _createRePass) {
+        
+        if (selectedRoleId === "ADMIN") {
+          if (!createUser(_createUsername, _createPass, _createName, _createLastname , INITIAL_ROLES.find((rol) => rol.id === 2), _createDirection, _createTel)) {
+       
+          }
+        } else {
+          createUserRolCommon(_createUsername, _createPass, _createName, _createLastname, _createDirection, _createTel);
+        }
+      } else {
+        alert("Las contraseñas no coinciden");
+      }
+    });
+  }
+});
 
 //#endregion Functions

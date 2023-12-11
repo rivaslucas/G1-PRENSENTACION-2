@@ -13,6 +13,8 @@ if (LocalStorageLength === 0) {
     "12345",
     "gero",
     "lopez",
-    INITIAL_ROLES.find((rol) => rol.id === 3)
+    INITIAL_ROLES.find((rol) => rol.id === 2),
+    "CHACABUCO 243",
+    "3813332837",
   );
 }
