@@ -19,7 +19,7 @@
     <header>
       <nav>
         <ul>
-          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html">Inicio</a></li>
           <li><a href="./products.html">Productos</a></li>
           <li id="admin-item"><a href="./admin.html">Administracion</a></li>
           <li class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#loginModal" id="loginnav"> acceder </li>
@@ -38,18 +38,16 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Codigo</th>
               <th>Nombre</th>
               <th>Descripcion</th>
               <th>Precio</th>
-              <th>Imagen</th>
               <th>Distribuidor</th>
               <th>Cantidad</th>
               <th>Categoria</th>
               <th>Acciones</th>
             </tr>
           </thead>
-          <tbody id="seminars-table"></tbody>
+          <tbody id="products-table"></tbody>
         </table>
       </section>
 
@@ -138,7 +136,7 @@
           <div class="modal-body"> ¿Está seguro que desea eliminar el producto? </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cancelar </button>
-            <button type="button" class="btn btn-danger" id="deleteSeminar"> Aceptar </button>
+            <button type="button" class="btn btn-danger" id="deleteProduct"> Aceptar </button>
           </div>
         </div>
       </div>
@@ -211,11 +209,11 @@
             <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar</h1>
           </div>
           <div class="modal-body">
-            <form  id="seminaradd">
+            <form  id="productadd">
 
             <div class="mb-3">
-              <label class="form-label" for="createName">Nombre</label>
-              <input class="form-control" type="text" required id="createName" placeholder="Ingresa el nombre"/>
+              <label class="form-label" for="createNameProduct">Nombre</label>
+              <input class="form-control" type="text" required id="createNameProduct" placeholder="Ingresa el nombre"/>
             </div>
             
             <div class="mb-3">

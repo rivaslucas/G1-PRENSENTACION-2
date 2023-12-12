@@ -28,7 +28,7 @@ const PRODUCTS = [
   {
     id: crypto.randomUUID(),
     name: "Jamon Cocido La Piamontesa",
-    description: "El jamón cocido es uno de los productos de charcutería más universales, pero también uno de los más desconocidos. Y no es más que el resultado de salar con salmuera, macerar y cocer la extremidad trasera del cerdo. Un alimento delicado que esconde numerosas posibilidades gastronómicas, fáciles de descubrir.",
+    description: "El jamón cocido es uno de los productos de charcutería más universales, pero también uno de los más desconocidos. Y no es más que el resultado de salar con salmuera, macerar y cocer la extremidad trasera del cerdo.",
     price: 4000,
     picture:"https://www.titanioshop.com.ar/Assets/img/productos/JAMON%20COCIDO%20PIAMONTESA.JPG",
     distributor: "Gomez Pardo",
@@ -42,4 +42,4 @@ const ROLES_VALUES = {
   ADMIN: 2,
 };
 
-export { INITIAL_ROLES, ROLES_VALUES, SEMINARS };
+export { INITIAL_ROLES, ROLES_VALUES, PRODUCTS };

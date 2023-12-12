@@ -36,7 +36,7 @@ function getHtmlCard(picture, name, description, id,price,distributor,quantity,c
   return `<div class="card" style="width: 18rem;">
   <img src="${picture}" class="card-img-top" alt="no-image">
   <div class="card-body">
-    <a href="./seminar_id.html?id=${id}" class="btn btn-dark">Detalle</a>
+    <a href="./product_id.html?id=${id}" class="btn btn-dark">Detalle</a>
     <h5 class="card-title">${name}</h5>
     <p class="card-text">${description}</p>
     <p class="card-text">${price}</p>

@@ -1,6 +1,6 @@
 import { LOCAL_STORAGE_KEYS } from "../configurations/keys.config.js";
 
-import { INITIAL_ROLES, SEMINARS } from "../configurations/seed.js";
+import { INITIAL_ROLES, PRODUCTS } from "../configurations/seed.js";
 
 import { LocalStorageLength, SetItem } from "./local-storage.app.js";
 import { createUser, login, logout } from "./user.app.js";

@@ -6,7 +6,7 @@ function getProducts() {
   return GetItem(LOCAL_STORAGE_KEYS.product);
 }
 //#endregion
-function createSeminar(
+function createProduct(
   name,
   description,
   price,
