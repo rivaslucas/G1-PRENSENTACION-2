@@ -35,59 +35,41 @@
     </header>
 
     <section>
-      <form>
+      <form id="userAddCommon">
         <div class="mb-3">
-          <label class="form-label" for="name">Nombre</label>
-          <input
-            class="form-control"
-            type="text"
-            required
-            id="name"
-            placeholder="Ingresa tu nombre"
-          />
+            <label class="form-label" for="createUsername">Usuario</label>
+            <input class="form-control" type="text" required id="createUsername" placeholder="Ingresa el nombre de usuario"/>
         </div>
         <div class="mb-3">
-          <label class="form-label" for="name">Apellido</label>
-          <input
-            class="form-control"
-            type="text"
-            required
-            id="lastname"
-            placeholder="Ingresa tu apellido"
-          />
+            <label class="form-label" for="createPass">Contraseña</label>
+            <input class="form-control" type="password" required id="createPass" placeholder="Ingresa la contraseña"/>
         </div>
         <div class="mb-3">
-          <label class="form-label" for="email">Email</label>
-          <input
-            class="form-control"
-            type="email"
-            required
-            id="email"
-            placeholder="example@mail.com"
-          />
+            <label class="form-label" for="createRePass">Confirmar Contraseña</label>
+            <input class="form-control" type="password" required id="createRePass" placeholder="Confirma la contraseña"/>
         </div>
         <div class="mb-3">
-          <label class="form-label" for="password">Password</label>
-          <input
-            class="form-control"
-            type="password"
-            required
-            id="password"
-            placeholder="Ingreses su contraseña"
-          />
+            <label class="form-label" for="createName">Nombre</label>
+            <input class="form-control" type="text" required id="createName" placeholder="Ingresa el nombre"/>
         </div>
         <div class="mb-3">
-          <label class="form-label" for="email">Repeat Password</label>
-          <input
-            class="form-control"
-            type="password"
-            required
-            id="repassword"
-            placeholder="Repita su contraseña"
-          />
+            <label class="form-label" for="createLastname">Apellido</label>
+            <input class="form-control" type="text" required id="createLastname" placeholder="Ingresa el apellido"/>
         </div>
-        <button class="btn btn-dark">Registrar</button>
-      </form>
+        <div class="mb-3">
+            <label class="form-label" for="createDirection">Dirección</label>
+            <input class="form-control" type="text" id="createDirection" placeholder="Ingresa la dirección"/>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="createTel">Teléfono</label>
+            <input class="form-control" type="tel" id="createTel" placeholder="Ingresa el teléfono"/>
+        </div>
+      
+        <div class="modal-footer">
+            <button data-bs-dismiss="modal" type="button" class="btn btn-secondary">Cancelar</button>
+            <button type="submit" class="btn btn-primary" id="addUserCommon">Guardar</button>
+        </div>
+    </form>
     </section>
     <!--Login Modal-->
     <!-- Button trigger modal -->
@@ -165,5 +147,6 @@
     <script src="../js/services/init.app.js" type="module"></script>
     <script src="../js/services/security.context.js" type="module"></script>
     <script src="../js/login.js" type="module"></script>
+    <script src="../js/register.js" type="module"></script>
   </body>
 </html>

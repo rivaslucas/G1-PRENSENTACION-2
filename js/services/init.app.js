@@ -9,12 +9,11 @@ if (LocalStorageLength === 0) {
   SetItem(LOCAL_STORAGE_KEYS.roles, INITIAL_ROLES);
   SetItem(LOCAL_STORAGE_KEYS.seminar, SEMINARS);
   createUser(
-  
     "gnm",
     "12345",
     "gero",
     "lopez",
-    INITIAL_ROLES.find((rol) => rol.id === 2),
+    INITIAL_ROLES.find((rol) => rol.id === 1),
     "CHACABUCO 243",
     "3813332837",
   );

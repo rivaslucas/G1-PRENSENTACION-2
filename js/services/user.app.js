@@ -31,8 +31,10 @@ function isUserExist(username) {
   return false;
 }
 function createUser(username, password, name, lastname, rol, direction, tel) {
+  let us= getUsers();
+  let id=us.length ;
   if (!isUserExist(username)) {
-    const newUser = { username, password, name, lastname, rol, direction, tel };
+    const newUser = { id, username, password, name, lastname, rol, direction, tel };
     let users = getArrayAndReplace(newUser);
 
     // Guardamos el array en el local storage
@@ -52,7 +54,7 @@ function createUserRolCommon(username, password, name, lastname, direction, tel)
   );
 }
 function updateUser(
- 
+  Id,
   username,
    password,
     name, 
@@ -64,18 +66,30 @@ function updateUser(
   const users = getUsers();
   if (users !== null && users.length > 0) {
     let index = users.findIndex(function (user) {
-      return user.username === username;
+      return user.id === Id;
     });
     let user = users[index];
+  
     user.username = username;
     user.password=password;
     user.name = name;
     user.lastname = lastname;
-    user.rol = rol;
+    user.rol=INITIAL_ROLES.find((roll) => roll.id === rol);
     user.direction = direction;
     user.tel=tel;
     users[index] = user;
     SetItem(LOCAL_STORAGE_KEYS.user, users);
+  }
+}
+function deleteUser(id) {
+  const users = getUsers();
+
+  if (users !== null && users.length > 0) {
+    let newUsersArray = users.filter(function (user) {
+      return user.id !== id;
+    });
+
+    SetItem(LOCAL_STORAGE_KEYS.user, newUsersArray);
   }
 }
 
@@ -135,4 +149,4 @@ function logout() {
 }
 //#endregion Login and Logout
 
-export { createUser, login, logout, createUserRolCommon, getUsers,updateUser,getUserByUsername};
+export { createUser, login, logout, createUserRolCommon, getUsers,updateUser,getUserByUsername, deleteUser};

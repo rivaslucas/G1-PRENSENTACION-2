@@ -6,7 +6,7 @@ import {
   updateSeminar,
   getSeminars,
 } from "./services/seminars.app.js";
-import { getUsers,createUser,createUserRolCommon,updateUser,getUserByUsername } from "./services/user.app.js";
+import { getUsers,createUser,createUserRolCommon,updateUser,getUserByUsername,deleteUser } from "./services/user.app.js";
 import { GetItem } from "../js/services/local-storage.app.js";
 import { LOCAL_STORAGE_KEYS } from "./configurations/keys.config.js";
 import { ROLES_VALUES,INITIAL_ROLES } from "./configurations/seed.js";
@@ -21,6 +21,7 @@ if ((userLogged && userLogged.rol.id !== ROLES_VALUES.ADMIN) || !userLogged) {
 const usersTable = document.getElementById("users-table");
 const seminarsTable = document.getElementById("seminars-table");
 const deleteSeminarBtn = document.getElementById("deleteSeminar");
+const deleteUserBtn= document.getElementById("deleteUsers");
 
 
 
@@ -86,7 +87,13 @@ deleteSeminarBtn.addEventListener("click", () => {
   deleteSeminar(currents.seminar.id);
   window.location.reload();
 });
-
+deleteUserBtn.addEventListener("click", (e) => {
+ 
+  let i= currents.user.id;
+  console.log(i);
+  deleteUser(i);
+  window.location.reload();
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   const addSeminarForm = document.getElementById("seminaradd");
@@ -245,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (_createPass === _createRePass) {
         
         if (selectedRoleId === "ADMIN") {
-          if (!createUser(_createUsername, _createPass, _createName, _createLastname , INITIAL_ROLES.find((rol) => rol.id === 2), _createDirection, _createTel)) {
+          if (!createUser(_createUsername, _createPass, _createName, _createLastname , INITIAL_ROLES.find((rol) => rol.id === 1), _createDirection, _createTel)) {
        
           }
         } else {
@@ -279,9 +286,9 @@ function refreshUsers() {
       tdUsername.innerText = user.username;
       tdName.innerText = user.name;
       tdLastname.innerText = user.lastname;
-      if(user.rol.id==2){
+      if(user.rol.id==1){
         tdRol.innerText= 'Administrador';}
-        else if(user.rol.id==1){
+        else if(user.rol.id==0){
           tdRol.innerText='Cliente';
         }
       else{
@@ -318,19 +325,21 @@ function refreshUsers() {
          
           currents.user = getUserByUsername(e.target.parentElement.id);
     
-          if (currents.user.username) {
+          if (currents.user && currents.user.username) {
+           
             updateUsername.value = currents.user.username;
+            updatePass.value = currents.user.password;
             updateName.value = currents.user.name;
             updateLastname.value = currents.user.lastname;
-            updateRol.value=currents.user.rol.id; 
+            updateRol.selectedIndex=currents.user.rol.id; 
             updateDirection.value = currents.user.direction;
             updateTel.value = currents.user.tel;
-            // Asigna otras propiedades de usuario a campos correspondientes del formulario
+            
           } else {
             updateUsername.value = "";
             updateName.value = "";
             updateLastname.value = "";
-            updateRol.value = ""; // Limpia el campo de selección del rol
+          
             updateDirection.value = "";
             updateTel.value = "";
             // Limpia otros campos del formulario si no hay usuario seleccionado
@@ -345,21 +354,22 @@ function refreshUsers() {
 
 // ...
 
-updateUserForm.addEventListener("submit", (e) => {
+updateUserForm.addEventListener("submit", () => {
 
   if (currents.user) {
+    let Id=currents.user.id;
     let newUsername = updateUsername.value;
     let newPass = updatePass.value;
     let newName = updateName.value;
     let newLastname = updateLastname.value;
     const userRolSelect = document.getElementById("updateRol");
-      const selectedOption = userRolSelect.options[userRolSelect.selectedIndex];
-      let newRol = selectedOption.value;
+    const selectedOption = userRolSelect.options;
+    let newRol = selectedOption.selectedIndex;
     let newDirection = updateDirection.value;
     let newTel = updateTel.value;
 
     updateUser(
-      
+      Id,
       newUsername,
       newPass,
       newName,
