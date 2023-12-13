@@ -203,6 +203,7 @@ function refreshProducts() {
       tr.appendChild(tdDistributor);
       tr.appendChild(tdQuantity);
       tr.appendChild(tdCategory);
+      tr.appendChild(tdActions);
       productsTable.appendChild(tr);
     });
 
