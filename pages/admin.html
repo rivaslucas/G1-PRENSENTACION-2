@@ -61,10 +61,12 @@
         <table class="table">
           <thead>
             <tr>
+              <th>Usuario</th>
               <th>Nombre</th>
               <th>Apellido</th>
-              <th>Usuario</th>
               <th>Rol</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -200,6 +202,101 @@
       </div>
     </div>
     <!--Update Modal -->
+    <!--Update User-->
+    <div
+    class="modal fade"
+    id="updateUserModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar Usuario</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <form  id="updateUserConfirm">
+          <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label" for="updateUsername">Username</label>
+            <input
+              class="form-control"
+              type="text"
+              required
+              id="updateUsername"
+              placeholder="Ingresa el Nombre de usuario"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="updatePass">Password</label>
+            <input
+            type="password"
+              class="form-control"
+              placeholder="Ingrese la contraseña"
+              id="updatePass"
+            ></input>
+          </div>
+          <div class="mb-3">
+            <div class="mb-3">
+              <label class="form-label" for="updateName">Name</label>
+              <input
+                class="form-control"
+                type="text"
+                required
+                id="updateName"
+                placeholder="Ingresa el nombre de usuario"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="updateLastname">Lastname</label>
+              <input
+                class="form-control"
+                id="updateLastname"
+                type="text"
+                placeholder="Ingrese el apellido"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="Rol">Rol</label>
+              <select class="form-control" id="updateRol">
+                <option value="CLIENTE">Cliente</option>
+                <option value="ADMIN">Administrador</option>
+            </select>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="updateDirection">Direction</label>
+              <input class="form-control" type="text" id="updateDirection" placeholder="Ingresa la dirección"/>
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="updateTel">Teléfono</label>
+              <input class="form-control" type="tel" id="updateTel" placeholder="Ingresa el teléfono"/>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              data-bs-dismiss="modal"
+              type="button"
+              class="btn btn-secondary"
+              id="notUpdate"
+            >
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary" id="update">
+              Guardar
+            </button>
+          </div>
+        </div>
+        </form>
+        
+      </div>
+    </div>
+  </div>
 
     <!-- Create  Modal ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -259,7 +356,7 @@
       </div>
     </div>
     <!--Create Modal-->
-<!-- Agrega este formulario dentro de la sección correspondiente en tu HTML -->
+<!-- CREACION DE USUARIOS-->
 <div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">

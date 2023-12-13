@@ -9,6 +9,7 @@ if (LocalStorageLength === 0) {
   SetItem(LOCAL_STORAGE_KEYS.roles, INITIAL_ROLES);
   SetItem(LOCAL_STORAGE_KEYS.product, PRODUCTS);
   createUser(
+  
     "gnm",
     "12345",
     "gero",
