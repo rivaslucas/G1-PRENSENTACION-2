@@ -1,12 +1,12 @@
 import { getEmojiText } from "./helpers/string.helper.convert.js";
 import {
-  createSeminar,
-  deleteSeminar,
-  getSeminarById,
-  updateSeminar,
-  getSeminars,
-} from "./services/seminars.app.js";
-import { getUsers,createUser,createUserRolCommon,updateUser,getUserByUsername,deleteUser } from "./services/user.app.js";
+  createProduct,
+  deleteProduct,
+  getProductById,
+  updateProduct,
+  getProducts,
+} from "./services/products.app.js";
+import { getUsers } from "./services/user.app.js";
 import { GetItem } from "../js/services/local-storage.app.js";
 import { LOCAL_STORAGE_KEYS } from "./configurations/keys.config.js";
 import { ROLES_VALUES,INITIAL_ROLES } from "./configurations/seed.js";
@@ -19,8 +19,8 @@ if ((userLogged && userLogged.rol.id !== ROLES_VALUES.ADMIN) || !userLogged) {
 
 //#region HTML  References
 const usersTable = document.getElementById("users-table");
-const seminarsTable = document.getElementById("seminars-table");
-const deleteSeminarBtn = document.getElementById("deleteSeminar");
+const productsTable = document.getElementById("products-table");
+const deleteProductBtn = document.getElementById("deleteProduct");
 const deleteUserBtn= document.getElementById("deleteUsers");
 
 
@@ -28,34 +28,33 @@ const deleteUserBtn= document.getElementById("deleteUsers");
 
 //#region  Create
 
-const createTitle = document.getElementById("createTitle");
-const createDescription = document.getElementById("createDescriptionTxtArea");
+const createNameProduct = document.getElementById("createNameProduct");
+const createDescription = document.getElementById("createDescription");
+const createPrice = document.getElementById("createPrice");
 const createPicture = document.getElementById("createPicture");
-const createDifficult = document.getElementById("createDifficult");
-const createStars = document.getElementById("createStars");
-const updateUserForm=document.getElementById("updateUserConfirm");
+const createDistributor = document.getElementById("createDistributor");
+const createQuantity = document.getElementById("createQuantity");
+const createCategory = document.getElementById("createCategory");
 
+let _createNameProduct =createNameProduct.value,
+  _createDescription=createDescription.value,
+  _createPrice=createPrice.value,
+  _createPicture=createPicture.value,
+  _createDistributor=createDistributor.value,
+  _createQuantity=createQuantity.value,
+  _createCategory=createCategory.value;
+//#endregion
 
 //#region  Update
-const updateSeminarBtn = document.getElementById("update");
+const updateProductBtn = document.getElementById("updateProduct");
+const updateName = document.getElementById("name");
+const updateDescription = document.getElementById("description");
+const updatePrice = document.getElementById("price");
 const updatePicture = document.getElementById("picture");
-const updateDifficult = document.getElementById("difficult");
-const updateStars = document.getElementById("stars");
-const updateDescription = document.getElementById("descriptionTxtArea");
-const updateTitle = document.getElementById("title");
-
-//------------users---------
-// const updateUsername= document.getElementById("updateUsername");
-// const updatePass=document.getElementById("updateActualPass");
-// const updateNewPass=document.getElementById("updateNewPass");
-// const updateName=document.getElementById('updateName');
-// const updateLastname=document.getElementById("updateLastname");
-// const updateRol=document.getElementById("updateRol");
-// const updateDirection=document.getElementById("updateDirection");
-// const updateTel=document.getElementById("updateTel");
-// const updateUserBtn=document.getElementById("updateUser");
-// //#endregion
-
+const updateDistributor = document.getElementById("distributor");
+const updateQuantity = document.getElementById("quantity");
+const updateCategory = document.getElementById("category");
+//#endregion
 
 //#endregion HTML References
 
@@ -63,11 +62,11 @@ const updateTitle = document.getElementById("title");
 
 let data = {
   users: [],
-  seminars: [],
+  products: [],
 };
 
 let currents = {
-  seminar: {},
+  product: {},
   user: {},
 };
 
@@ -76,17 +75,17 @@ let currents = {
 //#endregion Variables
 
 //#region  Init Data
-
-refresh(refreshSeminars);
 refresh(refreshUsers);
+refresh(refreshProducts);
 //#endregion Init Data
 
 //#region  Events
 
-deleteSeminarBtn.addEventListener("click", () => {
-  deleteSeminar(currents.seminar.id);
+deleteProductBtn.addEventListener("click", () => {
+  deleteProduct(currents.product.id);
   window.location.reload();
 });
+
 deleteUserBtn.addEventListener("click", (e) => {
  
   let i= currents.user.id;
@@ -96,62 +95,67 @@ deleteUserBtn.addEventListener("click", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const addSeminarForm = document.getElementById("seminaradd");
+  const addProductForm = document.getElementById("productadd");
 
-  if (addSeminarForm) {
-    addSeminarForm.addEventListener("submit", function (e) {
+  if (addProductForm) {
+    addProductForm.addEventListener("submit", function (e) {
       // Get the values from the form
-      const _createTitle = createTitle.value;
+      const _createNameProduct = createNameProduct.value;
       const _createDescription = createDescription.value;
-      const _createPicture =createPicture.value;
-      const _createDifficult = createDifficult.value;
-      const _createStars = createStars.value;
-
+      const _createPrice = createPrice.value;
+      const _createPicture = createPicture.value;
+      const _createDistributor = createDistributor.value;
+      const _createQuantity = createQuantity.value;
+      const _createCategory = createCategory.value;
       // Perform validation
      
-       createSeminar(_createTitle,_createDescription,'123','19:00',_createPicture,_createStars,_createDifficult);
+       createProduct(_createNameProduct,_createDescription,_createPrice,_createPicture,_createDistributor,_createQuantity,_createCategory);
      
     });
   }
 });
 
 
-updateSeminarBtn.addEventListener("click", () => {
-  if (currents.seminar.id) {
-    updateSeminar(
-      currents.seminar.id,
-      updateTitle.value,
+updateProductBtn.addEventListener("click", () => {
+  if (currents.product.id) {
+    updateProduct(
+      currents.product.id,
+      updateName.value,
       updateDescription.value,
-      currents.seminar.date,
-      currents.seminar.time,
+      updatePrice.value,
       updatePicture.value,
-      currents.seminar.difficult, // Mantener la dificultad actual
-      updateDifficult.value, // Nueva dificultad
-      currents.seminar.stars, // Mantener las estrellas actuales
-      updateStars.value // Nuevas estrellas
+      updateDistributor.value,
+      updateQuantity.value, 
+      updateCategory.value 
     );
     // Actualizar la interfaz después de la modificación
-    refresh(refreshSeminars);
+    refresh(refreshProducts);
   }
   document.getElementById("notUpdate")?.click();
 });
 
 //#region Create inptus Events
 
-createTitle.addEventListener("change", (e) => {
-  _createTitle = e.target.value;
+_createNameProduct.addEventListener("change", (e) => {
+  _createNameProduct = e.target.value;
 });
 createDescription.addEventListener("change", (e) => {
   _createDescription = e.target.value;
 });
+createPrice.addEventListener("change", (e) => {
+  _createPrice = e.target.value;
+});
 createPicture.addEventListener("change", (e) => {
   _createPicture = e.target.value;
 });
-createDifficult.addEventListener("change", (e) => {
-  _createDifficult = +e.target.value;
+createDistributor.addEventListener("change", (e) => {
+  _createDistributor = +e.target.value;
 });
-createStars.addEventListener("change", (e) => {
-  _createStars = +e.target.value;
+createQuantity.addEventListener("change", (e) => {
+  _createQuantity = +e.target.value;
+});
+createCategory.addEventListener("change", (e) => {
+  _createCategory = +e.target.value;
 });
 //#endregion Create Inputs Events
 //#endregion Events
@@ -162,28 +166,30 @@ function refresh(callback) {
 }
 
 
-function refreshSeminars() {
-  seminarsTable.innerHTML = "";
+function refreshProducts() {
+  productsTable.innerHTML = "";
 
-  data.seminars = getSeminars();
+  data.products = getProducts();
 
-  if (data.seminars) {
-    data.seminars.forEach((seminar) => {
+  if (data.products) {
+    data.products.forEach((product) => {
       let tr = document.createElement("tr");
-      let tdTitle = document.createElement("td");
-      let tdDate = document.createElement("td");
-      let tdTime = document.createElement("td");
-      let tdDifficult = document.createElement("td");
-      let tdRank = document.createElement("td");
+      let tdNameProduct = document.createElement("td");
+      let tdDescription = document.createElement("td");
+      let tdPrice = document.createElement("td");
+      let tdDistributor = document.createElement("td");
+      let tdQuantity = document.createElement("td");
+      let tdCategory = document.createElement("td");
       let tdActions = document.createElement("td");
 
-      tdActions.id = seminar.id;
-      tdTitle.innerText = seminar.title;
-      tdDate.innerText = seminar.date;
-      tdTime.innerText = seminar.time;
-      tdDifficult.innerText = getEmojiText(seminar.difficult, "⭐");
-      tdRank.innerText = getEmojiText(seminar.stars, "⭐");
-      tdActions.innerHTML = `<a id='${seminar.id}' href='#' style='color: black;' data-bs-toggle="modal" data-bs-target="#adminModal">
+      tdActions.id = product.id;
+      tdNameProduct.innerText = product.name;
+      tdDescription.innerText = product.description;
+      tdPrice.innerText = product.price;
+      tdDistributor.innerText = product.distributor;
+      tdQuantity.innerText = product.quantity;
+      tdCategory.innerText = product.category;
+      tdActions.innerHTML = `<a id='${product.id}' href='#' style='color: black;' data-bs-toggle="modal" data-bs-target="#adminModal">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
@@ -191,35 +197,40 @@ function refreshSeminars() {
                                 <path d="M16 5l3 3" /></svg>
                             </a>`;
 
-      tr.appendChild(tdTitle);
-      tr.appendChild(tdDate);
-      tr.appendChild(tdTime);
-      tr.appendChild(tdDifficult);
-      tr.appendChild(tdRank);
+      tr.appendChild(tdNameProduct);
+      tr.appendChild(tdDescription);
+      tr.appendChild(tdPrice);
+      tr.appendChild(tdDistributor);
+      tr.appendChild(tdQuantity);
+      tr.appendChild(tdCategory);
       tr.appendChild(tdActions);
-      seminarsTable.appendChild(tr);
+      productsTable.appendChild(tr);
     });
 
-    data.seminars.forEach((seminar) => {
-      const btnModify = document.getElementById(seminar.id);
+    data.products.forEach((product) => {
+      const btnModify = document.getElementById(product.id);
 
       if (btnModify) {
         btnModify.addEventListener("click", (e) => {
           console.log(e.target.parentElement.id);
-          currents.seminar = getSeminarById(e.target.parentElement.id);
+          currents.product = getProductById(e.target.parentElement.id);
 
-          if (currents.seminar) {
-            updateTitle.value = currents.seminar.title;
-            updatePicture.value = currents.seminar.picture;
-            updateDifficult.value = currents.seminar.difficult;
-            updateStars.value = currents.seminar.stars;
-            updateDescription.value = currents.seminar.description;
+          if (currents.product) {
+            updateName.value = currents.product.name;
+            updateDescription.value = currents.product.description;
+            updatePrice.value = currents.product.price;
+            updatePicture.value = currents.product.picture;
+            updateDistributor.value = currents.product.distributor;
+            updateQuantity.value = currents.product.quantity;
+            updateCategory.value = currents.product.category;
           } else {
-            updateTitle.value = "";
-            updatePicture.value = "";
-            updateDifficult.value = "";
-            updateStars.value = "";
+            updateName.value = "";
             updateDescription.value = "";
+            updatePrice.value = "";
+            updatePicture.value = "";
+            updateDistributor.value = "";
+            updateQuantity.value = "";
+            updateCategory.value = "";
           }
         });
       }
