@@ -4,7 +4,7 @@
 //enumeradores
 const LOCAL_STORAGE_KEYS = {
   user: "Usuarios",
-  product: "Productos",
+  seminar: "Seminarios",
   activeUser: "UsuarioLoggeado",
   roles: "Roles",
 };
