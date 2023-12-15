@@ -4,15 +4,16 @@
 
 const INITIAL_ROLES = [
   {
-    id: 1,
+    id: 0,
     description: "Cliente",
   },
   {
-    id: 2,
+    id: 1,
     description: "Admin",
   },
  
 ];
+
 
 const PRODUCTS = [
   {
@@ -38,8 +39,8 @@ const PRODUCTS = [
 ];
 
 const ROLES_VALUES = {
-  CLIENTE: 1,
-  ADMIN: 2,
+  CLIENTE: 0,
+  ADMIN: 1,
 };
 
 export { INITIAL_ROLES, ROLES_VALUES, PRODUCTS };
