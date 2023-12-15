@@ -14,29 +14,27 @@ const INITIAL_ROLES = [
  
 ];
 
-const SEMINARS = [
+
+const PRODUCTS = [
   {
     id: crypto.randomUUID(),
-    title: "Introducción a HTML y CSS",
-    description: "Charla dictada por un expero en html.",
-    date: Date.now(),
-    time: "18:00hs",
-    picture:
-      "https://image.api.playstation.com/vulcan/ap/rnd/202310/0214/b449973c0d7f4afc176aa1debb996b472718ce0f4175e02b.png",
-    stars: 5,
-    difficult: 1,
+    name: "Queso Cremoso Rosalat",
+    description: "Es un queso fresco, de pasta blanda, cerrada algo elástica y cremosa; de sabor ligeramente ácido y aroma suave.",
+    price: 3500,
+    picture:"https://www.rosalat.com.ar/wp-content/uploads/2017/08/DSC_5485.jpg",
+    distributor: "Capo",
+    quantity: 50,
+    category:"QUESOS"
   },
   {
     id: crypto.randomUUID(),
-    title: "Javascript Inicial",
-    description:
-      "Conoce las bases iniciales de Javascript para programación web",
-    date: Date.now(),
-    time: "15:00hs",
-    picture:
-      "https://image.api.playstation.com/vulcan/ap/rnd/202310/0214/b449973c0d7f4afc176aa1debb996b472718ce0f4175e02b.png",
-    stars: 4,
-    difficult: 3,
+    name: "Jamon Cocido La Piamontesa",
+    description: "El jamón cocido es uno de los productos de charcutería más universales, pero también uno de los más desconocidos. Y no es más que el resultado de salar con salmuera, macerar y cocer la extremidad trasera del cerdo.",
+    price: 4000,
+    picture:"https://www.titanioshop.com.ar/Assets/img/productos/JAMON%20COCIDO%20PIAMONTESA.JPG",
+    distributor: "Gomez Pardo",
+    quantity: 29,
+    category:"FIAMBRES"
   },
 ];
 
@@ -45,4 +43,4 @@ const ROLES_VALUES = {
   ADMIN: 1,
 };
 
-export { INITIAL_ROLES, ROLES_VALUES, SEMINARS };
+export { INITIAL_ROLES, ROLES_VALUES, PRODUCTS };
