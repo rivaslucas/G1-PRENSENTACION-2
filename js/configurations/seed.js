@@ -21,7 +21,7 @@ const PRODUCTS = [
     name: "Queso Cremoso Rosalat",
     description: "Es un queso fresco, de pasta blanda, cerrada algo elástica y cremosa; de sabor ligeramente ácido y aroma suave.",
     price: 3500,
-    picture:"https://www.rosalat.com.ar/wp-content/uploads/2017/08/DSC_5485.jpg",
+    picture:"https://www.titanioshop.com.ar/Assets/img/productos/JAMON%20COCIDO%20PIAMONTESA.JPG",
     distributor: "Capo",
     quantity: 50,
     category:"QUESOS"

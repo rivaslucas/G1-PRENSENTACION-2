@@ -1,0 +1,11 @@
+.producto{
+
+    display: flex !important;
+    flex-direction: row;
+  
+    }  
+    
+    img{        
+        margin-top: -20px;
+        width: 100px !important;
+    }

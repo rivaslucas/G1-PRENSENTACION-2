@@ -4,18 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../css/cart.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
   </head>
-
   <body>
-    
     <header>
       <nav>
         <ul>
@@ -35,8 +36,26 @@
         </ul>
       </nav>
     </header>
-    <div class="container fluid d-flex mt-2" id="detail"></div>
-    <!--Login Modal ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <section class="container mt-5">
+        <table class="table">
+          <thead>
+            <tr>
+            <div class="producto"> 
+                <th>Nombre</th>
+                <th></th>
+            </div>
+              <th>Descripcion</th>
+              <th>Precio</th>
+              <th>Distribuidor</th>
+              <th>Cantidad</th>
+              <th>Categoria</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="products-table"></tbody>
+        </table>
+      </section>
+    <!--Login Modal-->
     <!-- Button trigger modal -->
 
     <!-- Modal -->
@@ -50,17 +69,37 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel"><span class="badge rounded-pill text-bg-warning">Login</span> Inicia Sesión </h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              <span class="badge rounded-pill text-bg-warning">Login</span>
+              Inicia Sesión
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <div class="mb-3">
               <label class="form-label" for="email">Email</label>
-              <input class="form-control" type="email" required id="email" placeholder="example@mail.com"/>
+              <input
+                class="form-control"
+                type="email"
+                required
+                id="email"
+                placeholder="example@mail.com"
+              />
             </div>
             <div class="mb-3">
               <label class="form-label" for="password">Password</label>
-              <input class="form-control" type="password" required id="password" placeholder="Ingresa tu contraseña"/>
+              <input
+                class="form-control"
+                type="password"
+                required
+                id="password"
+                placeholder="Ingresa tu contraseña"
+              />
             </div>
 
             <div class="mb-3">
@@ -68,14 +107,22 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="close"> Cerrar </button>
-            <button id="login" type="button" class="btn btn-dark"> Iniciar Sesión </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+              id="close"
+            >
+              Cerrar
+            </button>
+            <button id="login" type="button" class="btn btn-dark">
+              Iniciar Sesión
+            </button>
           </div>
         </div>
       </div>
     </div>
     <!--Login Modal-->
-    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -84,6 +131,7 @@
     <script src="../js/services/init.app.js" type="module"></script>
     <script src="../js/services/security.context.js" type="module"></script>
     <script src="../js/login.js" type="module"></script>
-<script src="../js/products_id.js" type="module"></script>
+    <script src="../js/cart.js" type="module"></script>
+ 
   </body>
 </html>

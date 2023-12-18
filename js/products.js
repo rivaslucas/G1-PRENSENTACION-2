@@ -14,7 +14,8 @@ if (products) {
 
 function refresh() {
   let htmlString = "";
-  divContainer.innerHtml = "";
+  divContainer.innerHTML = "";
+
 
   products.forEach((product) => {
     htmlString += getHtmlCard(
@@ -32,11 +33,11 @@ function refresh() {
   divContainer.innerHTML = htmlString;
 }
 
-function getHtmlCard(picture, name, description, id,price,distributor,quantity,category) {
+function getHtmlCard(picture,id, name, description,price,distributor,quantity,category) {
   return `<div class="card" style="width: 18rem;">
   <img src="${picture}" class="card-img-top" alt="no-image">
   <div class="card-body">
-    <a href="./product_id.html?id=${id}" class="btn btn-dark">Detalle</a>
+    <a href="./products_id.html?id=${id}" class="btn btn-dark">Detalle</a>
     <h5 class="card-title">${name}</h5>
     <p class="card-text">${description}</p>
     <p class="card-text">${price}</p>
