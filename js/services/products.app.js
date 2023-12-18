@@ -83,7 +83,7 @@ function deleteProduct(id) {
   }
 }
 
-function getProductById(id) {
+function getProductsById(id) {
   const products = getProducts();
   return products.find((product) => product.id === id);
 }
@@ -94,5 +94,5 @@ export {
   createProduct,
   deleteProduct,
   updateProduct,
-  getProductById,
+  getProductsById,
 };
