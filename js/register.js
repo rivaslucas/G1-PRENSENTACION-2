@@ -32,9 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
          
             }
           } else {
+            
             createUserRolCommon(_createUsername, _createPass, _createName, _createLastname, _createDirection, _createTel);
-            alert("Usuario registrado");
-            window.location.href = "./index.html";
+           
+            
           }
         } else {
           alert("Las contraseñas no coinciden");

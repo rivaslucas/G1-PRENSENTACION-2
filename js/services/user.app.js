@@ -32,13 +32,15 @@ function isUserExist(username) {
 }
 function createUser(username, password, name, lastname, rol, direction, tel) {
   let us= getUsers();
-  let id=us.length ;
+  let id=us.length;
   if (!isUserExist(username)) {
     const newUser = { id, username, password, name, lastname, rol, direction, tel };
     let users = getArrayAndReplace(newUser);
 
     // Guardamos el array en el local storage
     SetItem(LOCAL_STORAGE_KEYS.user, users);
+    alert("usuario registrado con exito");
+   
   }
 }
 
