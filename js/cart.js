@@ -1,10 +1,5 @@
 
 
-import {
-  deleteProduct,
-  getProductById,
-  getProducts,
-} from "./services/products.app.js";
 
 //import {deleteProductCart} from "./services/cart.app.js";
 

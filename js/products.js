@@ -95,3 +95,58 @@ function getHtmlCard(picture, id, name, price, distributor, quantity, category) 
     </div>
   </div>`;
 }
+
+
+function displayProducts(productsToDisplay) {
+  let htmlString = "";
+  divContainer.innerHTML = "";
+
+  productsToDisplay.forEach((product) => {
+    htmlString += getHtmlCard(
+      product.picture,
+      product.id,
+      product.name,
+      product.price,
+      product.distributor,
+      product.quantity,
+      product.category
+    );
+  });
+
+  divContainer.innerHTML = htmlString;
+
+  productsToDisplay.forEach((product) => {
+    const addProductToCartBtn = document.getElementById(`productAddCart_${product.id}`);
+    if (addProductToCartBtn) {
+      addProductToCartBtn.addEventListener("click", () => {
+        addToCart(product);
+      });
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initializePage);
+
+function initializePage() {
+  const searchInput = document.getElementById("searchInput");
+  const searchButton = document.getElementById("searchButton");
+
+  // Añadir evento al botón de búsqueda
+  searchButton.addEventListener("click", () => {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    searchProducts(searchTerm);
+  });
+
+  // Mostrar todos los productos al cargar la página
+  displayProducts(products);
+}
+
+function searchProducts(searchTerm) {
+  // Filtrar productos que coincidan con el término de búsqueda
+  const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm)
+  );
+
+  // Mostrar los productos filtrados
+  displayProducts(filteredProducts);
+}

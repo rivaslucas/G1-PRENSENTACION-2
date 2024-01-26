@@ -2,7 +2,7 @@
   import {
     createProduct,
     deleteProduct,
-    getProductById,
+
     updateProduct,
     getProducts,
   } from "./services/products.app.js";

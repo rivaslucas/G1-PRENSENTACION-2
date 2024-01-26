@@ -19,6 +19,7 @@
       <nav>
         <ul>
           <li><a href="../index.html">Inicio</a></li>
+        
           <li><a href="./products.html">Productos</a></li>
           <li id="admin-item"><a href="./admin.html">Administracion</a></li>
           <li id="cart"><a href="./cart.html"><i class="bi bi-truck"></i>  </a></li>
@@ -31,8 +32,20 @@
             Acceder
           </li>
           <li id="logout" class="btn btn-danger">Cerrar sesion</li>
+          <li>
+            <input
+              class="form-control"
+              type="text"
+              id="searchInput"
+              placeholder="Buscar productos..."
+            />
+          </li>
+          <li>
+            <button class="btn btn-dark" id="searchButton">Buscar</button>
+          </li>
         </ul>
       </nav>
+      
     </header>
     <div class="container fluid d-flex mt-2" id="card-container"></div>
     <!--Login Modal-->
