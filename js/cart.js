@@ -18,11 +18,11 @@ let currents = {
 };
 
 document.addEventListener('click', (e) => {
-  if (e.target.classList.contains('btn-primary')) {
+  if (e.target.classList.contains('btn-warning')) {
     // Botón de aumento
     const productId = e.target.getAttribute('data-product-id');
     increaseQuantity(productId);
-  } else if (e.target.classList.contains('btn-warning')) {
+  } else if (e.target.classList.contains('btn-success')) {
     // Botón de disminución
     const productId = e.target.getAttribute('data-product-id');
     decreaseQuantity(productId);
@@ -54,14 +54,14 @@ async function refreshProducts() {
 
         increaseButton.innerText = '+';
         increaseButton.setAttribute('data-product-id', product.id);
-        increaseButton.classList.add('btn', 'btn-primary');
+        increaseButton.classList.add('btn', 'btn-warning', 'me-1');
         decreaseButton.innerText = '-';
         decreaseButton.setAttribute('data-product-id', product.id);
-        decreaseButton.classList.add('btn', 'btn-warning');
+        decreaseButton.classList.add('btn', 'btn-success', 'ms-1');
   
         tdActions.id = product.id;
         tdNameProduct.innerText = product.name;
-        tdImg.innerHTML = `<img src="${product.picture}" class="card-img-top" alt="no-image"> </img>`;
+        tdImg.innerHTML = `<img src="${product.picture}" class="card-img-top imagecart m-0" alt="no-image"> </img>`;
         tdPrice.innerText = product.price;
         tdDistributor.innerText = product.distributor;
         tdQuantity.innerText = product.quantity;
@@ -69,6 +69,7 @@ async function refreshProducts() {
         tdCategory.innerText = product.category;
     
         tdActions.appendChild(increaseButton);
+    
         tdActions.appendChild(decreaseButton);
         tr.appendChild(tdNameProduct);
         tr.appendChild(tdImg);
@@ -140,11 +141,11 @@ async function refreshProducts() {
 document.addEventListener('click', handleButtonClick);
 
 function handleButtonClick(e) {
-  if (e.target.classList.contains('btn-primary')) {
+  if (e.target.classList.contains('btn-warning')) {
     // Botón de aumento
     const productId = e.target.getAttribute('data-product-id');
     increaseQuantity(productId);
-  } else if (e.target.classList.contains('btn-warning')) {
+  } else if (e.target.classList.contains('btn-success')) {
     // Botón de disminución
     const productId = e.target.getAttribute('data-product-id');
     decreaseQuantity(productId);

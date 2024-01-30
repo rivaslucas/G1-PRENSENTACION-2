@@ -82,18 +82,22 @@ function updateCartUI() {
 }
 
 function getHtmlCard(picture, id, name, price, distributor, quantity, category) {
-  return `<div class="card" style="width: 18rem;">
-    <img src="${picture}" class="card-img-top" alt="no-image" style="width: 250px;">
-    <div class="card-body">
-      <h5 class="card-title">${name}</h5>
-      <p class="card-text">${price}</p>
-      <p class="card-text">${distributor}</p>
-      <p class="card-text">${quantity}</p>
-      <p class="card-text">${category}</p>
-      <a href="./products_id.html?id=${id}" class="btn btn-dark">Detalle</a>
-      <a id="productAddCart_${id}" class="btn btn-success">Agregar</a>
-    </div>
-  </div>`;
+  
+  return `<div class="col-ms-12 col-md-6 col-lg-3 mb-3" >
+            <div class="card carta shadow border-light style="width: 30rem;">
+              <img src="${picture}" class="card-img-top img-fluid" alt="img producto" style="width: 30rem;"/>
+              <div class="card-body text-center">
+                <h5 class="card-title fuente m-0 negrita">Producto: ${name}</h5>
+                <p class="card-text m-0">Distribuidor: ${distributor}</p>
+                <p class="card-text m-0">Cantidad: ${quantity}</p>
+                <p class="card-text m-0">Categoria: ${category}</p>
+                <p class="card-text m-0">Precio:<p class="precio"> ${price}</p></p>
+                <a href="./products_id.html?id=${id}" class="btn btn-warning m-1">Detalle</a>
+                <a id="productAddCart_${id}" class="btn btn-success m-1">Agregar</a>
+              </div>
+            </div>
+          </div>`;
+
 }
 
 

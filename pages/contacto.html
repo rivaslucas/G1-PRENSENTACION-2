@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Lucas Rivas - Jose Espinosa Borgia" />
+  <meta name="DISTRIMUNDO" content="Pagina de venta de articulos comostibles x mayor" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="../css/index.css" rel="stylesheet" />
+  <link href="../css/_styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <script src="https://kit.fontawesome.com/fddaa856c1.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/x-icon" href="../img/truck.png">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap");
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <title>DISTRIMUNDO - PRODUCTO</title>
+</head>
+
+<body class="ancho p-0 m-0 fondo">
+  <header>
+    <nav class="navbar navbar-expand-lg bg-warning navbar-warning fixed-top z-3 container-fluid" data-bs-theme="blue">
+      <div class="container-fluid">
+        <div>&nbsp&nbsp&nbsp</div>
+        <a class="navbar-brand" href="../index.html"><img class="img-fluid" src="../img/logo.jpg" alt="logo distrimundo"
+            width="90" height="auto" /></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDistri"
+          aria-controls="navbarDistri" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarDistri">
+          <ul class="navbar-nav distribucion mb-2 mb-lg-0">
+
+            <li class="nav-item menu mx-2 px-1 text-center">
+              <a class="nav-link active fw-bold fs-4" aria-current="page" href="../index.html">Inicio</a>
+            </li>
+
+            <li class="nav-item menu mx-2 px-1 text-center" data-bs-toggle="modal" data-bs-target="#loginModal"
+              id="loginnav">
+              <a class="nav-link fw-bold fs-4">
+                <img src="../img/navbar/login.png" alt="login" width="50" height="35">
+                Iniciar Sesion
+              </a>
+            </li>
+
+            <li class="nav-item menu mx-2 px-1 text-center" id="logout">
+              <a class="nav-link fw-bold fs-4">
+                <img src="../img/navbar/login.png" alt="logout" width="50" height="35">
+                Cerrar Sesion
+              </a>
+            </li>
+
+            <li class="nav-item menu mx-2 px-1 text-center">
+              <a class="nav-link fw-bold fs-4" href="../pages/products.html">Productos</a>
+            </li>
+
+            <li id="admin-item" class="nav-item menu mx-2 px-1 text-center">
+              <a class="nav-link fw-bold fs-4" href="../pages/admin.html">Administracion</a>
+            </li>
+
+            <li id="cart" class="nav-item menu mx-2 px-1 text-center">
+              <a class="nav-link fw-bold fs-4" href="../pages/cart.html"><img src="../img/navbar/carrito.png"
+                  alt="carrito" width="50" height="35"> Carrito</a>
+            </li>
+            <li class="nav-item menu mx-2 px-1 text-center">
+              <a class="nav-link fw-bold fs-4" aria-current="page" href="../pages/contacto.html">Contacto</a>
+            </li>
+            <li class="nav-item menu mx-2 px-1 text-center">
+              <a class="nav-link fw-bold fs-4" aria-current="page" href="../pages/nosotros.html">Acerca de nosotros</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <main>
+    <div class="container-fluid p-0">
+      <div class="row">
+        <div class="col-12 border border-warning">
+          <img src="../img/contacto/contacto.jpg" alt="contacto" class="d-block w-100 img-fluid" />
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row contacto">
+        <div class="container-fluid col-sm-12 col-lg-6 mt-5 mb-5">
+          <div class="row">
+            <div class="container-fluid col-12 text-center">
+              <h5 class="fuente mt-5 mb-5 text-center text-white">UBICACION DE NUESTRO LOCAL</h5>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3544.010324854765!2d-65.60603809999999!3d-27.3441457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9423cf6e241052eb%3A0x130b8a4022f12938!2sSan%20Lorenzo%20%26%20Obispo%20Jos%C3%A9%20Colombres%2C%20Concepci%C3%B3n%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1706648381690!5m2!1ses-419!2sar"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>"
+            </div>
+            <div class="container-fluid col-12 ms-5">
+              <h5 class="fuente mt-5 ms-5 text-white"> <img src="../img/contacto/ubicacion.jpg" alt="ubicacion"
+                  width="30" height="35">
+                Direccion San Lorenzo y Obispo Colombres - Concepción - Tucumán</h5>
+              <h5 class="fuente mt-5 ms-5 text-white"> <img src="../img/contacto/whatsapp.jpg" alt="ubicacion"
+                  width="30" height="35">
+                Escribinos a nuestro Whatsapp +54 9 381 995577</h5>
+              <h5 class="fuente mt-5 ms-5 text-white"> <img src="../img/contacto/email.jpg" alt="ubicacion" width="30"
+                  height="35">
+                Envíanos tu mensaje a info@distrimundo.com.ar</h5>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid col-sm-12 col-lg-6 p-5">
+          <div class="rounded p-4 fondo2">
+            <h5 class="fuente mt-5 mb-5 text-center text-white">
+              SI TIENES DUDAS O NECESITAS INFORMACION, POR FAVOR, PÓNGASE EN CONTACTO CON NOSOTROS A TRAVES DEL
+              SIGUIENTE FORMULARIO.
+            </h5>
+            <form class="negrita" action="./error404.html">
+
+              <div class="mb-3">
+                <label for="txt_nom" class="form-label text-white">Nombre:</label>
+                <input type="text" id="txt_nom" class="form-control" required="True" maxlength="50" />
+              </div>
+
+              <div class="mb-3">
+                <label for="txt_email" class="form-label text-white">E-Mail:</label>
+                <input type="email" id="txt_email" class="form-control" placeholder="nombre@dominio.com" required="True"
+                  aria-describedby="emailHelp" maxlength="50" />
+                <div id="emailHelp" class="form-text text-white">
+                  Nosotros no compartiremos tu e-mail con nadie
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="txt_tel" class="form-label text-white">Tipo de Telefono :</label>
+                <select name="tipotel" id="txt_tel" class="form-control" required="True">
+                  <option value="Celular">Celular</option>
+                  <option value="Fijo">Fijo</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="txt_codtel" class="form-label text-white">Codigo de Pais :</label>
+                <input type="number" id="txt_codtel" class="form-control" placeholder="Argentina (54)" required="True"
+                  maxlength="3" />
+              </div>
+
+              <div class="mb-3">
+                <label for="txt_numtel" class="form-label text-white">Telefono :</label>
+                <input type="tel" id="txt_numtel" class="form-control" placeholder="Numero de Telefono" required="True"
+                  aria-describedby="PhoneHelp" maxlength="15" />
+                <div id="PhoneHelp" class="form-text text-white">
+                  Ingrese codigo de area y numero de telefono sin el prefijo 15
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="txt_comentario" class="form-label text-white">Comentario:</label>
+                <textarea id="txt_comentario" class="form-control" required="True" maxlength="500"
+                  placeholder="Escriba su consulta" aria-describedby="comentHelp"></textarea>
+                <div id="comentHelp" class="form-text text-white">
+                  Escribir hasta 500 caracteres
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <button class="btn btn-warning btn_search text-center" type="submit">Enviar</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--Login Modal-->
+  <!-- Button trigger modal -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">
+            <span class="badge rounded-pill text-bg-warning">Login</span>
+            Inicia Sesión
+          </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-control" type="email" required id="email" placeholder="example@mail.com" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" required id="password" placeholder="Ingresa tu contraseña" />
+          </div>
+
+          <div class="mb-3">
+            <a href="./register.html">No tienes cuenta? regístrate acá.</a>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="close">
+            Cerrar
+          </button>
+          <button id="login" type="button" class="btn btn-warning">
+            Iniciar Sesión
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Login Modal-->
+
+  <footer>
+    <div class="conteiner-fluid fixed-bottom">
+      <div class="row">
+        <div class="pie_izq col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 bg-warning d-none d-sm-block pt-2">
+          <a class="item_izq ms-4" href="../index.html"><img class="img-fluid" src="../img/Logo.jpg"
+              alt="logo Distrimundo" width="90" height="auto" /></a>
+        </div>
+        <div class="pie_cen col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 bg-warning">
+          Seguinos en nuestas redes:
+          <a class="item_cen" href="https://twitter.com"><img src="../img/twitter.jpg" alt="Logo twitter" width="auto"
+              height="60" /></a>
+          <a class="item_cen" href="https://facebook.com"><img src="../img/facebook.jpg" alt="Logo facebook"
+              width="auto" height="60" /></a>
+          <a class="item_cen" href="https://instagram.com"><img src="../img/instagram.jpg" alt="Logo instagram"
+              width="auto" height="60" /></a>
+        </div>
+
+        <div
+          class="pie_der col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 bg-warning d-none d-sm-block pt-4">
+          <a class="item_der" href="mailto:info@distrimundo.com.ar"><img src="../img/mail.jpg" alt="logo mail"
+              width="35" height="30" /> info@distrimundo.com.ar</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="../js/services/init.app.js" type="module"></script>
+  <script src="../js/services/security.context.js" type="module"></script>
+  <script src="../js/login.js" type="module"></script>
+  <script src="../js/products.js" type="module"></script>
+</body>
+
+</html>

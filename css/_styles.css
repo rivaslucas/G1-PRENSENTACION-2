@@ -1,4 +1,4 @@
-nav {
+/**nav {
   width: 30%;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
@@ -24,7 +24,411 @@ body {
   margin: 0;
   padding: 0;
 }
+**/
+#principal {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    min-height: 100vh;
+    background-color: rgb(41, 197, 163);
+}
+
+.ancho {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+justify-items: center;
+width: "100%";
+}
+
+.fondo {
+  background-color: rgb(41, 197, 163)
+}
+
+.fondo2 {
+  background-color: rgb(76, 109, 182)
+}
+
+.esquinas {
+  background-color: white;
+  border-top-left-radius: "25%";
+  border-top-right-radius: "25%";
+  border-bottom-left-radius: "25%";
+  border-bottom-right-radius: "25%";
+}
+
+#SliderPrincipal {
+  top:"100px";
+  width: 100%;
+}
+
+#productos {
+  bottom: 160px;
+  transform: scale(1.5);
+  transition: transform 0.5s ease-in;
+}
+
+#productos:hover {
+  transform: scale(2);
+}
+
+h1{
+  color: rgb(255, 255, 255) !important;
+  font-family: Arial, Helvetica, sans-serif;
+  text-justify: distribute-all-lines;
+}
+
 
 #admin-item {
   display: block;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
+@media all and (max-width: 576px) {
+  .slider-responsive {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  #mapa {
+    width: 500px;
+    height: 350px;
+  }
+
+}
+
+.fuente {
+  font-family: "League Spartan", sans-serif;
+}
+
+.fuente2 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 18px;
+} 
+
+.negrita2 {
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.negrita {
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+.menu {
+  font-family: "League Spartan", sans-serif;
+  cursor:pointer;
+  color: black;
+}
+
+.menu:hover {
+  color: rgb(66, 141, 95);
+  font-weight: bold;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(41, 197, 163);
+  border-bottom-width: 3px;
+}
+
+.pie_izq {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  color: black;
+  font-family: "League Spartan", sans-serif;
+  padding-left: "30px";
+}
+
+.pie_cen {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  font-family: "League Spartan", sans-serif;
+  text-decoration: none;
+}
+
+.pie_der {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  color: black;
+  font-family: "League Spartan", sans-serif;
+  text-decoration: none;
+}
+
+.item_izq {
+  display: flex;
+  flex-direction: row;
+  justify-content:left;
+  margin-left: "50px";
+}
+
+.item_cen {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
+}
+
+.item_der {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 20px;
+}
+
+.label_search {
+  border-color: white;
+}
+
+.btn_search {
+  border-color: goldenrod;
+  background-color: #212529;
+  color: goldenrod;
+}
+
+.btn_search:hover {
+  border-color: #212529;
+  background-color: goldenrod;
+  color: #212529;
+}
+
+main {
+  padding-top: 75px;
+  padding-bottom: 80px;
+}
+
+.distribucion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.categoria {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+
+.carta {
+  z-index: 0;
+}
+
+.carta:hover {
+  transition: 1s;
+  position: relative;
+  z-index: 1;
+  transform: scale(1.1);
+  filter: contrast(100%);
+}
+
+.precio {
+  display: inline;
+  font-weight: bold;
+  background-color: goldenrod;
+}
+
+.precio::after {
+  vertical-align: super;
+  content: "00";
+  font-size: 10px;
+}
+
+.precio::before {
+  content: "$";
+}
+
+.precio_grande {
+  display: inline;
+  font-weight: bold;
+  color: black;
+  font-size: 35px;
+}
+
+.precio_grande::after {
+  vertical-align: super;
+  content: "00";
+  font-size: 10px;
+}
+
+.precio_grande::before {
+  content: "$";
+}
+
+.pagina {
+  z-index: 0;
+}
+
+.pagina:hover {
+  transition: 0.3s;
+  position: relative;
+  font-weight: bold;
+  font-size: 20px;
+  z-index: 1;
+  transform: scale(1.1);
+  filter: contrast(100%);
+}
+
+.titulo {
+  font-family: "League Spartan", sans-serif;
+  text-align: center;
+}
+
+.form-label {
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+}
+
+.form-control {
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+  color: rgb(192, 186, 186);
+}
+
+.form-text {
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+  color: gray;
+}
+
+.form_align {
+  display: flex;
+  align-items: center;
+}
+
+.ancore_simple {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.ubicacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ubic_ver {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  border-radius: 50%;
+}
+
+.font_gold {
+  font-family: "League Spartan", sans-serif;
+  color: goldenrod;
+}
+
+.justificado {
+  text-align: justify;
+  font-family: "League Spartan", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(94, 89, 89);
+}
+
+.borde_bajo {
+  border-bottom-style: solid;
+  border-bottom-color: rgb(94, 89, 89);
+  border-bottom: 2px;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.m-right {
+  text-align: right;
+}
+
+.b-inf {
+  border-bottom-style: solid;
+  border-bottom-color: gray;
+  border-bottom-width: 1px;
+}
+
+.detalle {
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.seccion {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.justcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left;
+
+}
+
+.producto{
+  display: flex !important;
+  flex-direction: row;
+
+  }  
+  
+.imagecart{        
+      margin-top: -20px;
+      width: 100px !important;
+  }
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 20% auto;
+  padding: 20px;
+  width: 60%;
+  text-align: center;
 }
