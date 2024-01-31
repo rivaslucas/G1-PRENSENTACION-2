@@ -1,30 +1,49 @@
-/**nav {
-  width: 30%;
-  border-bottom: 1px solid black;
-  border-right: 1px solid black;
-  padding: 0.5rem;
+/*incio productos*/
+.notification {
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  background-color: rgb(233, 187, 23);
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+  z-index: 9999;
 }
 
-nav ul {
+#searchContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-nav ul li a {
-  text-decoration: none;
+#searchInput {
+  padding: 10px;
+  width: 60%; /* Reducimos el ancho del input */
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Hacemos más redondo el borde del input */
+  font-size: 16px;
 }
 
-nav ul li {
-  list-style: none;
+#searchButton {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 10px; /* Hacemos más redondo el botón */
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 10px; /* Agregamos un margen a la izquierda del botón */
 }
 
-body {
-  margin: 0;
-  padding: 0;
+#searchButton:hover {
+  background-color: #218838;
 }
-**/
+.carta .card-img-top {
+  width: 100%; /* Ajusta el ancho según tus necesidades */
+  height: auto; /* Esto permite mantener la proporción de la imagen */
+}
+/*fin productos*/
 #principal {
     display: flex;
     flex-direction: column;

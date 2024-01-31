@@ -65,12 +65,22 @@ function addToCart(product) {
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // Puedes realizar otras acciones después de agregar al carrito si es necesario
-  console.log(`Producto ${product.name} agregado al carrito`);
+  showNotification("Producto agregado al carrito con éxito");
 
   // Puedes actualizar la interfaz de usuario o realizar otras acciones según tus necesidades
   updateCartUI();
 }
+function showNotification() {
+  const notification = document.getElementById('notification');
+  
+  // Mostrar la notificación
+  notification.style.display = 'block';
 
+  // Ocultar la notificación después de 1 segundo (1000 milisegundos)
+  setTimeout(() => {
+    notification.style.display = 'none';
+  }, 1000);
+}
 function updateCartUI() {
   // Esta función se encargaría de actualizar la interfaz de usuario
   // Puedes implementarla según la lógica necesaria para tu aplicación
@@ -129,28 +139,24 @@ function displayProducts(productsToDisplay) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", initializePage);
-
-function initializePage() {
+function handleSearchInput() {
   const searchInput = document.getElementById("searchInput");
-  const searchButton = document.getElementById("searchButton");
-
-  // Añadir evento al botón de búsqueda
-  searchButton.addEventListener("click", () => {
-    const searchTerm = searchInput.value.trim().toLowerCase();
-    searchProducts(searchTerm);
-  });
-
-  // Mostrar todos los productos al cargar la página
-  displayProducts(products);
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  searchProducts(searchTerm);
 }
 
 function searchProducts(searchTerm) {
-  // Filtrar productos que coincidan con el término de búsqueda
   const filteredProducts = products.filter((product) =>
     product.name.toLowerCase().includes(searchTerm)
   );
 
-  // Mostrar los productos filtrados
   displayProducts(filteredProducts);
 }
+
+function initializePage() {
+  const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("input", handleSearchInput);
+  displayProducts(products);
+}
+
+document.addEventListener("DOMContentLoaded", initializePage);
