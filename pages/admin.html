@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="author"
     content="Lucas Rivas - Jose Espinosa Borgia" />
-    <meta name="DISTRIMUNDO" content="Pagina de venta de articulos comostibles x mayor" />
+    <meta name="DISTRIMUNDO" content="Pagina de venta de articulos comestibles x mayor" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/index.css" rel="stylesheet" />
     <link href="../css/_styles.css" rel="stylesheet" />
@@ -160,6 +160,7 @@
                 required
                 id="email"
                 placeholder="example@mail.com"
+                maxlength="25"
               />
             </div>
             <div class="mb-3">
@@ -170,6 +171,7 @@
                 required
                 id="password"
                 placeholder="Ingresa tu contraseña"
+                maxlength="25"
               />
             </div>
 
@@ -318,29 +320,29 @@
           
           <div class="mb-3">
             <label class="form-label" for="name">Nombre</label>
-            <input class="form-control" type="text" required id="name" placeholder="Ingrese el nombre del producto"/>
+            <input class="form-control" type="text" required id="name" placeholder="Ingrese el nombre del producto" maxlength="25"/>
           </div>
           
           <div class="mb-3">
             <label for="description">Descripción</label>
-            <textarea class="form-control" placeholder="Ingrese la descripción del producto" id="description"></textarea>
+            <textarea class="form-control" placeholder="Ingrese la descripción del producto" id="description" maxlength="250"></textarea>
           </div>
           
           <div class="mb-3">
             <label class="form-label" for="price">Precio</label>
-            <textarea class="form-control" placeholder="Ingrese el precio del producto" id="price"></textarea>
+            <textarea class="form-control" placeholder="Ingrese el precio del producto" id="price" maxlength="8"></textarea>
           </div>
 
           <div class="mb-3">
             
             <div class="mb-3">
               <label class="form-label" for="picture">Url de Imagen</label>
-              <input class="form-control" type="text" required id="picture" placeholder="Ingrese la url de la imagen"/>
+              <input class="form-control" type="text" required id="picture" placeholder="Ingrese la url de la imagen" maxlength="500"/>
             </div>
 
             <div class="mb-3">
               <label class="form-label" for="distributor">Distribuidor</label>
-              <input class="form-control" type="text" required id="distributor" placeholder="Ingrese el distribuidor"/>
+              <input class="form-control" type="text" required id="distributor" placeholder="Ingrese el distribuidor" maxlength="25"/>
             </div>
 
             <div class="mb-3">
@@ -350,7 +352,7 @@
 
             <div class="mb-3">
               <label class="form-label" for="category">Categoria</label>
-              <input class="form-control" type="text" required id="category" placeholder="Ingrese la categoria"/>
+              <input class="form-control" type="text" required id="category" placeholder="Ingrese la categoria" maxlength="25"/>
             </div>
 
           </div>
@@ -430,6 +432,7 @@
               required
               id="updateUsername"
               placeholder="Ingresa el Nombre de usuario"
+              maxlength="25"
             />
           </div>
           <div class="mb-3">
@@ -439,6 +442,7 @@
               class="form-control"
               placeholder="Ingrese la contraseña"
               id="updatePass"
+              maxlength="25"
             ></input>
           </div>
           <div class="mb-3">
@@ -450,6 +454,7 @@
                 required
                 id="updateName"
                 placeholder="Ingresa el nombre de usuario"
+                maxlength="25"
               />
             </div>
             <div class="mb-3">
@@ -459,6 +464,7 @@
                 id="updateLastname"
                 type="text"
                 placeholder="Ingrese el apellido"
+                maxlength="25"
               />
             </div>
             <div class="mb-3">
@@ -470,11 +476,11 @@
             </div>
             <div class="mb-3">
               <label class="form-label" for="updateDirection">Direction</label>
-              <input class="form-control" type="text" id="updateDirection" placeholder="Ingresa la dirección"/>
+              <input class="form-control" type="text" id="updateDirection" placeholder="Ingresa la dirección" maxlength="50"/>
           </div>
           <div class="mb-3">
               <label class="form-label" for="updateTel">Teléfono</label>
-              <input class="form-control" type="tel"  pattern="[0-9]+" id="updateTel" placeholder="Ingresa el teléfono"/>
+              <input class="form-control" type="tel"  pattern="[0-9]+" id="updateTel" placeholder="Ingresa el teléfono" maxlength="15"/>
           </div>
           </div>
           <div class="modal-footer">
@@ -509,29 +515,29 @@
 
           <div class="mb-3">
             <label class="form-label" for="createNameProduct">Nombre</label>
-            <input class="form-control" type="text" required id="createNameProduct" placeholder="Ingresa el nombre"/>
+            <input class="form-control" type="text" required id="createNameProduct" placeholder="Ingresa el nombre" maxlength="25"/>
           </div>
           
           <div class="mb-3">
             <label for="createDescription">Descripción</label>
-            <textarea class="form-control" placeholder="Ingrese la descripción" id="createDescription"></textarea>
+            <textarea class="form-control" placeholder="Ingrese la descripción" id="createDescription"> maxlength="50"</textarea>
           </div>
           
           <div class="mb-3">
 
             <div class="mb-3">
               <label class="form-label" for="createPrice">Precio</label>
-              <input class="form-control" type="text" required id="createPrice" placeholder="Ingresa el precio"/>
+              <input class="form-control" type="text" required id="createPrice" placeholder="Ingresa el precio" maxlength="8"/>
             </div>
 
             <div class="mb-3">
               <label class="form-label" for="createPicture">Url de Imagen</label>
-              <input class="form-control" type="text" required id="createPicture" placeholder="Ingresa la url de la portada"/>
+              <input class="form-control" type="text" required id="createPicture" placeholder="Ingresa la url de la portada" maxlength="500"/>
             </div>
 
             <div class="mb-3">
               <label class="form-label" for="createDistributor">Distribuidor</label>
-              <input class="form-control" type="text" required id="createDistributor" placeholder="Ingrese el distribuidor"/>
+              <input class="form-control" type="text" required id="createDistributor" placeholder="Ingrese el distribuidor" maxlength="25"/>
             </div>
 
             <div class="mb-3">
@@ -541,7 +547,7 @@
 
             <div class="mb-3">
               <label class="form-label" for="createCategory">Categoria</label>
-              <input class="form-control" type="text" required id="createCategory" placeholder="Ingrese la categoria"/>
+              <input class="form-control" type="text" required id="createCategory" placeholder="Ingrese la categoria" maxlength="25"/>
             </div>
           </div>
 
@@ -567,31 +573,31 @@
               <form id="userAdd">
                   <div class="mb-3">
                       <label class="form-label" for="createUsername">Usuario</label>
-                      <input class="form-control" type="text" required id="createUsername" placeholder="Ingresa el nombre de usuario"/>
+                      <input class="form-control" type="text" required id="createUsername" placeholder="Ingresa el nombre de usuario" maxlength="25"/>
                   </div>
                   <div class="mb-3">
                       <label class="form-label" for="createPass">Contraseña</label>
-                      <input class="form-control" type="password" required id="createPass" placeholder="Ingresa la contraseña"/>
+                      <input class="form-control" type="password" required id="createPass" placeholder="Ingresa la contraseña" maxlength="25"/>
                   </div>
                   <div class="mb-3">
                       <label class="form-label" for="createRePass">Confirmar Contraseña</label>
-                      <input class="form-control" type="password" required id="createRePass" placeholder="Confirma la contraseña"/>
+                      <input class="form-control" type="password" required id="createRePass" placeholder="Confirma la contraseña" maxlength="25"/>
                   </div>
                   <div class="mb-3">
                       <label class="form-label" for="createName">Nombre</label>
-                      <input class="form-control" type="text" required id="createName" placeholder="Ingresa el nombre"/>
+                      <input class="form-control" type="text" required id="createName" placeholder="Ingresa el nombre" maxlength="25"/>
                   </div>
                   <div class="mb-3">
                       <label class="form-label" for="createLastname">Apellido</label>
-                      <input class="form-control" type="text" required id="createLastname" placeholder="Ingresa el apellido"/>
+                      <input class="form-control" type="text" required id="createLastname" placeholder="Ingresa el apellido" maxlength="25"/>
                   </div>
                   <div class="mb-3">
                       <label class="form-label" for="createDirection">Dirección</label>
-                      <input class="form-control" type="text" id="createDirection" placeholder="Ingresa la dirección"/>
+                      <input class="form-control" type="text" id="createDirection" placeholder="Ingresa la dirección" maxlength="50"/>
                   </div>
                   <div class="mb-3">
                       <label class="form-label" for="createTel">Teléfono</label>
-                      <input class="form-control" type="tel"   pattern="[0-9]+" id="createTel" placeholder="Ingresa el teléfono"/>
+                      <input class="form-control" type="tel"   pattern="[0-9]+" id="createTel" placeholder="Ingresa el teléfono" maxlength="15"/>
                   </div>
                   <div class="mb-3">
                       <label class="form-label" for="createRol">Rol</label>

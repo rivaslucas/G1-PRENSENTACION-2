@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="author"
     content="Lucas Rivas - Jose Espinosa Borgia" />
-    <meta name="DISTRIMUNDO" content="Pagina de venta de articulos comostibles x mayor" />
+    <meta name="DISTRIMUNDO" content="Pagina de venta de articulos comestibles x mayor" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/index.css" rel="stylesheet" />
     <link href="../css/_styles.css" rel="stylesheet" />
@@ -83,7 +83,7 @@
     </header>
     <main class="mt-5">
       <div id="searchContainer">
-        <input type="text" id="searchInput" placeholder="Buscar productos...">
+        <input type="text" id="searchInput" placeholder="Buscar productos..." maxlength="50">
       </div>
       <div class="container fluid" >
         <div class="row" id="card-container">
@@ -91,7 +91,7 @@
         </div>
       </div>
       
-      <div id="notification" class="notification">
+      <div id="notification" class="notification rounded">
         Producto agregado
       </div>
       
@@ -130,6 +130,7 @@
                 required
                 id="email"
                 placeholder="example@mail.com"
+                maxlength="25"
               />
             </div>
             <div class="mb-3">
@@ -140,6 +141,7 @@
                 required
                 id="password"
                 placeholder="Ingresa tu contraseña"
+                maxlength="25"
               />
             </div>
 

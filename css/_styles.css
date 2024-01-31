@@ -60,6 +60,20 @@ justify-items: center;
 width: "100%";
 }
 
+.margen-derecho {
+display: flex;
+flex-direction: row;
+justify-content: right;
+align-items: center;
+}
+
+.margen-centrado {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .fondo {
   background-color: rgb(41, 197, 163)
 }

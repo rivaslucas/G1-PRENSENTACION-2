@@ -26,10 +26,7 @@ document.addEventListener('click', (e) => {
     // Botón de disminución
     const productId = e.target.getAttribute('data-product-id');
     decreaseQuantity(productId);
-  } else if(e.target.classList.contains('btn-primary')){
-    //boton comprar
-    window.open("../pages/error404.html");
-  }
+  } 
 });
 
 refresh(refreshProducts);
@@ -54,7 +51,6 @@ async function refreshProducts() {
         let tdActions = document.createElement("td");
         let increaseButton = document.createElement('button');
         let decreaseButton = document.createElement('button');
-        let buyButton = document.createElement('button');
 
 
         increaseButton.innerText = '+';
@@ -64,10 +60,6 @@ async function refreshProducts() {
         decreaseButton.innerText = '-';
         decreaseButton.setAttribute('data-product-id', product.id);
         decreaseButton.classList.add('btn', 'btn-success', 'ms-1', 'me-1');
-        
-        buyButton.innerText = 'Comprar';
-        buyButton.setAttribute('data-product-id', product.id);
-        buyButton.classList.add('btn', 'btn-primary', 'ms-1');
 
         tdActions.id = product.id;
         tdNameProduct.innerText = product.name;
@@ -81,7 +73,6 @@ async function refreshProducts() {
     
         tdActions.appendChild(increaseButton);
         tdActions.appendChild(decreaseButton);
-        tdActions.appendChild(buyButton);
 
         tr.appendChild(tdNameProduct);
         tr.appendChild(tdImg);
