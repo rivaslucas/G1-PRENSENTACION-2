@@ -8,8 +8,9 @@
     img{        
         margin-top: -20px;
         width: 100px !important;
+
     }
-    /* Agrega estos estilos al bloque de estilos de tu documento o a tu archivo de estilos CSS */
+
 .modal {
     display: none;
     position: fixed;
@@ -28,5 +29,6 @@
     text-align: center;
   }
   
-  /* Agrega más estilos según sea necesario */
-  
+
+    }
+
