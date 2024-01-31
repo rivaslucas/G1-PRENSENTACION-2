@@ -83,40 +83,40 @@
 
     <section class="mt-5">
       <div class="container mt-5">
-        <div class="row mt-5">
-          <div class="container-fluid col-ms-12 col-md-6 col-lg-3">
-          </div>
-          <div class="container-fluid col-ms-12 col-md-6 col-lg-3 fondo2 rounded p-2 mt-5">
-            <form class="mt-5" id="userAddCommon">
-                <h5 class="text-center">Registro de Usuario</h5>
+        <div class="row mt-5 mb-5">
+            <div class="container-fluid col-ms-12 col-md-6 col-lg-3 mb-5">
+            </div>
+            <div class="container-fluid col-ms-12 col-md-6 col-lg-3 fondo2 rounded p-2 mt-5 mb-5">
+              <form class="mt-5" id="userAddCommon">
+                <h5 class="text-center text-white">Registro de Usuario</h5>
                 <br>
                 <div class="mb-2">
-                    <label class="form-label" for="createUsername">Usuario</label>
-                    <input class="form-control" type="text" required id="createUsername" placeholder="Ingresa el nombre de usuario"/>
+                    <label class="form-label  text-white" for="createUsername">Usuario</label>
+                    <input class="form-control" type="text" required id="createUsername" maxlength="25" placeholder="Ingresa el nombre de usuario"/>
                 </div>
                 <div class="mb-2">
-                    <label class="form-label" for="createPass">Contraseña</label>
-                    <input class="form-control" type="password" required id="createPass" placeholder="Ingresa la contraseña"/>
+                    <label class="form-label  text-white" for="createPass">Contraseña</label>
+                    <input class="form-control" type="password" required id="createPass"  maxlength="25" placeholder="Ingresa la contraseña"/>
                 </div>
                 <div class="mb-2">
-                    <label class="form-label" for="createRePass">Confirmar Contraseña</label>
-                    <input class="form-control" type="password" required id="createRePass" placeholder="Confirma la contraseña"/>
+                    <label class="form-label text-white" for="createRePass">Confirmar Contraseña</label>
+                    <input class="form-control" type="password" required id="createRePass"  maxlength="25" placeholder="Confirma la contraseña"/>
                 </div>
                 <div class="mb-2">
-                    <label class="form-label" for="createName">Nombre</label>
-                    <input class="form-control" type="text" required id="createName" placeholder="Ingresa el nombre"/>
+                    <label class="form-label text-white" for="createName">Nombre</label>
+                    <input class="form-control" type="text" required id="createName"  maxlength="25" placeholder="Ingresa el nombre"/>
                 </div>
                 <div class="mb-2">
-                    <label class="form-label" for="createLastname">Apellido</label>
-                    <input class="form-control" type="text" required id="createLastname" placeholder="Ingresa el apellido"/>
+                    <label class="form-label text-white" for="createLastname">Apellido</label>
+                    <input class="form-control" type="text" required id="createLastname"  maxlength="25" placeholder="Ingresa el apellido"/>
                 </div>
                 <div class="mb-2">
-                    <label class="form-label" for="createDirection">Dirección</label>
-                    <input class="form-control" type="text" id="createDirection" placeholder="Ingresa la dirección"/>
+                    <label class="form-label text-white" for="createDirection">Dirección</label>
+                    <input class="form-control" type="text" id="createDirection"  maxlength="50" placeholder="Ingresa la dirección"/>
                 </div>
                 <div class="mb-2">
-                    <label class="form-label" for="createTel">Teléfono</label>
-                    <input class="form-control" type="text" id="createTel"  pattern="[0-9]+" placeholder="Ingresa el teléfono"/>
+                    <label class="form-label text-white" for="createTel">Teléfono</label>
+                    <input class="form-control" type="text" id="createTel"  pattern="[0-9]+"  maxlength="15" placeholder="Ingresa el teléfono"/>
                 </div>
               
                 <div class="modal-footer">
@@ -124,10 +124,10 @@
                     <div>&nbsp;&nbsp;</div>
                     <button type="submit" class="btn btn-warning" id="addUserCommon">Guardar</button>
                 </div>
-            </form>
-        </div>
-        <div class="container-fluid col-ms-12 col-md-6 col-lg-3">
-        </div>
+              </form>
+            </div>
+            <div class="container-fluid col-ms-12 col-md-6 col-lg-3 mb-5">
+            </div>
         </div>
       </div>
     </section>

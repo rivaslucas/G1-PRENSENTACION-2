@@ -26,6 +26,9 @@ document.addEventListener('click', (e) => {
     // Botón de disminución
     const productId = e.target.getAttribute('data-product-id');
     decreaseQuantity(productId);
+  } else if(e.target.classList.contains('btn-primary')){
+    //boton comprar
+    window.open("../pages/error404.html");
   }
 });
 
@@ -51,26 +54,35 @@ async function refreshProducts() {
         let tdActions = document.createElement("td");
         let increaseButton = document.createElement('button');
         let decreaseButton = document.createElement('button');
+        let buyButton = document.createElement('button');
+
 
         increaseButton.innerText = '+';
         increaseButton.setAttribute('data-product-id', product.id);
         increaseButton.classList.add('btn', 'btn-warning', 'me-1');
+        
         decreaseButton.innerText = '-';
         decreaseButton.setAttribute('data-product-id', product.id);
-        decreaseButton.classList.add('btn', 'btn-success', 'ms-1');
-  
+        decreaseButton.classList.add('btn', 'btn-success', 'ms-1', 'me-1');
+        
+        buyButton.innerText = 'Comprar';
+        buyButton.setAttribute('data-product-id', product.id);
+        buyButton.classList.add('btn', 'btn-primary', 'ms-1');
+
         tdActions.id = product.id;
         tdNameProduct.innerText = product.name;
         tdImg.innerHTML = `<img src="${product.picture}" class="card-img-top imagecart m-0" alt="no-image"> </img>`;
         tdPrice.innerText = product.price;
         tdDistributor.innerText = product.distributor;
         tdQuantity.innerText = product.quantity;
+        tdQuantity.classList.add('text-center',);
         tdSubTotal.innerText= product.quantity*product.price;
         tdCategory.innerText = product.category;
     
         tdActions.appendChild(increaseButton);
-    
         tdActions.appendChild(decreaseButton);
+        tdActions.appendChild(buyButton);
+
         tr.appendChild(tdNameProduct);
         tr.appendChild(tdImg);
         tr.appendChild(tdPrice);
