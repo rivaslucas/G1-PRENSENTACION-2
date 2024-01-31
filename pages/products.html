@@ -82,15 +82,26 @@
       
     </header>
     <main class="mt-5">
-      <div id="searchContainer">
-        <input type="text" id="searchInput" placeholder="Buscar productos..." maxlength="50">
-      </div>
-      <div class="container fluid" >
-        <div class="row" id="card-container">
+      <div class="container">
+        <div class="row ubic_ver">
           
+          <div class="container-fluid col" id="searchContainer">
+            <div class="container-fluid d-flex row fondo2 rounded m-2 p-2 fila-centro">
+              <div class="container-fluid col d-flex">
+                <h5 class="text-white m-2">Filtro de Productos:</h5>
+                <input type="text" id="searchInput" placeholder="Buscar productos..." maxlength="50" >
+              </div>
+            </div>
+          </div>
+          
+          <div class="container fluid col" >
+            <div class="row" id="card-container"> 
+            </div>
+          </div>
+
         </div>
       </div>
-      
+
       <div id="notification" class="notification rounded">
         Producto agregado
       </div>
