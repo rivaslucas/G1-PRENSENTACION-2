@@ -1,8 +1,3 @@
-
-
-
-//import {deleteProductCart} from "./services/cart.app.js";
-
 const productTable = document.getElementById("product-table");
 const deleteProductBtn = document.getElementById("deleteProduct");
 
