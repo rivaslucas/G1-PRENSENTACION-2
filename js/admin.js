@@ -2,7 +2,7 @@
   import {
     createProduct,
     deleteProduct,
-    getProductById,
+    getProductsById,	
     updateProduct,
     getProducts,
   } from "./services/products.app.js";
@@ -206,7 +206,7 @@
         if (btnModify) {
           btnModify.addEventListener("click", (e) => {
             console.log(e.target.parentElement.id);
-            currents.product = getProductById(e.target.parentElement.id);
+            currents.product = getProductsById(e.target.parentElement.id);
 
             if (currents.product) {
               updateName.value = currents.product.name;

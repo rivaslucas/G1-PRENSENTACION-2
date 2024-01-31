@@ -1,4 +1,4 @@
-section {
+seccion {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -6,7 +6,7 @@ section {
   height: 80vh;
 }
 
-form {
+formulario {
   padding: 2rem;
   width: 50%;
   border: 1px solid black;
@@ -18,6 +18,6 @@ form {
   background-color: rgb(154, 154, 154);
 }
 
-div {
+formato {
   width: 50%;
 }

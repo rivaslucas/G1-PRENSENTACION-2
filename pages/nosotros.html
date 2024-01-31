@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author"
+    content="Lucas Rivas - Jose Espinosa Borgia" />
+    <meta name="DISTRIMUNDO" content="Pagina de venta de articulos comostibles x mayor" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../css/index.css" rel="stylesheet" />
+    <link href="../css/_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <script src="https://kit.fontawesome.com/fddaa856c1.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="../img/truck.png">
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap");
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>DISTRIMUNDO - PRODUCTO</title>
+  </head>
+  <body class="ancho p-0 m-0 fondo">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-warning navbar-warning fixed-top z-3 container-fluid" data-bs-theme="blue">
+        <div class="container-fluid">
+          <div>&nbsp&nbsp&nbsp</div>
+          <a class="navbar-brand" href="../index.html"><img class="img-fluid" src="../img/logo.jpg" alt="logo distrimundo" width="90"
+              height="auto" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDistri"
+            aria-controls="navbarDistri" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarDistri">
+            <ul class="navbar-nav distribucion mb-2 mb-lg-0">
+              
+              <li class="nav-item menu mx-2 px-1 text-center">
+                <a class="nav-link active fw-bold fs-4" aria-current="page" href="../index.html">Inicio</a>
+              </li>
+
+              <li class="nav-item menu mx-2 px-1 text-center" data-bs-toggle="modal" data-bs-target="#loginModal" id="loginnav">
+                <a class="nav-link fw-bold fs-4">
+                  <img src="../img/navbar/login.png" alt="login" width="50" height="35">
+                  Iniciar Sesion
+                </a>
+              </li>
+
+              <li class="nav-item menu mx-2 px-1 text-center" id="logout">
+                <a class="nav-link fw-bold fs-4">
+                  <img src="../img/navbar/login.png" alt="logout" width="50" height="35">
+                  Cerrar Sesion
+                </a>
+              </li>
+
+              <li class="nav-item menu mx-2 px-1 text-center">
+                <a class="nav-link fw-bold fs-4" href="../pages/products.html">Productos</a>
+              </li>
+
+              <li id="admin-item" class="nav-item menu mx-2 px-1 text-center">
+                <a class="nav-link fw-bold fs-4" href="../pages/admin.html">Administracion</a>
+              </li>
+
+              <li id="cart" class="nav-item menu mx-2 px-1 text-center">
+                <a class="nav-link fw-bold fs-4" href="../pages/cart.html"><img src="../img/navbar/carrito.png"
+                    alt="carrito" width="50" height="35"> Carrito</a>
+              </li>
+              <li class="nav-item menu mx-2 px-1 text-center">
+                <a class="nav-link fw-bold fs-4" aria-current="page" href="../pages/contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item menu mx-2 px-1 text-center">
+                <a class="nav-link fw-bold fs-4" aria-current="page" href="../pages/nosotros.html">Acerca de nosotros</a>
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+      
+    </header>
+    <main>
+      <section p-4>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 fuente">
+              <h1 class="ancore_simple text-center mt-5">Acerca de nosotros</h1>
+              <h3 class="ancore_simple text-center mt-3 mb-3 text-white">Somos una empresa líder en la comercializacion distribucion de productos de alimentación. Estamos entre las 20 empresas más valoradas y de mejor reputación de la Argentina.
+                Nos encargamos de la logistica y distribucion de quesos, lacteos, fiambres, embutidos y chacinados.</h3>
+              <div class="border border-warning rounded p-3 fondo2">
+                <h3 class="ancore_simple text-white text-center fondo2">¿Cuál es la misión de nuestra empresa?</h3>
+                <p class="ancore_simple mb-0 text-white negrita text-center">Ser un referente de prestigio, excelencia y calidad a nivel regional en el
+                  sector de distribucion de alimentos y satisfacer asi las nececidades de nuestros clientes.</p>
+              </div>
+            </div>
+  
+            <div class="container-fluid col-12 mt-4 mb-4">
+              <div class="row">
+  
+                <div class="container-fluid col-sm-12 col-lg-4 p-4 fondo2 rounded">
+                  <div class="card bg-dark shadow p-4 ubic_ver">
+                    <img src="../img/nosotros/jose.png" class="profile-img" alt="jose" width="100" height="100" />
+                    <div class="card-body text-center">
+                      <h3 class="card-title fuente text-white"> Jose Espinosa Borgia </h3>
+                      <h5 class="card-text font_gold">CEO</h5>
+                      <p class="text-white form-text">Especialista en Logistica y Distribucion de Productos Alimenticios.</p>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="container-fluid col-sm-12 col-lg-4 p-4 fondo2 rounded">
+                  <div class="card bg-dark shadow p-4 ubic_ver">
+                    <img src="../img/nosotros/lucas.png" class="profile-img" alt="lucas" width="100" height="100" />
+                    <div class="card-body text-center">
+                      <h3 class="card-title fuente text-white"> Lucas Rivas </h3>
+                      <h5 class="card-text font_gold">Fundador</h5>
+                      <p class="text-white form-text">Especialista en e-commerce, marketing y posicionamiento en el mercado </p>
+                    </div>
+                  </div>
+                </div>
+  
+                
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+    </main>
+    <!--Login Modal-->
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              <span class="badge rounded-pill text-bg-warning">Login</span>
+              Inicia Sesión
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label" for="email">Email</label>
+              <input
+                class="form-control"
+                type="email"
+                required
+                id="email"
+                placeholder="example@mail.com"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="password">Password</label>
+              <input
+                class="form-control"
+                type="password"
+                required
+                id="password"
+                placeholder="Ingresa tu contraseña"
+              />
+            </div>
+
+            <div class="mb-3">
+              <a href="./register.html">No tienes cuenta? regístrate acá.</a>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-dismiss="modal"
+              id="close"
+            >
+              Cerrar
+            </button>
+            <button id="login" type="button" class="btn btn-warning">
+              Iniciar Sesión
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Login Modal-->
+
+    <footer>
+      <div class="conteiner-fluid fixed-bottom">
+        <div class="row">
+          <div class="pie_izq col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 bg-warning d-none d-sm-block pt-2">
+            <a class="item_izq ms-4" href="../index.html"><img class="img-fluid" src="../img/Logo.jpg" alt="logo Distrimundo" width="90"
+                height="auto" /></a>
+          </div>
+          <div class="pie_cen col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 bg-warning">
+              Seguinos en nuestas redes:  
+            <a class="item_cen" href="https://twitter.com"><img src="../img/twitter.jpg" alt="Logo twitter" width="auto"
+                height="60" /></a>
+            <a class="item_cen" href="https://facebook.com"><img src="../img/facebook.jpg" alt="Logo facebook" width="auto"
+                height="60" /></a>
+            <a class="item_cen" href="https://instagram.com"><img
+                src="../img/instagram.jpg" alt="Logo instagram" width="auto" height="60" /></a>
+          </div>
+  
+          <div class="pie_der col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 bg-warning d-none d-sm-block pt-4">
+            <a class="item_der" href="mailto:info@distrimundo.com.ar"><img src="../img/mail.jpg" alt="logo mail"
+                width="35" height="30" />   info@distrimundo.com.ar</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/services/init.app.js" type="module"></script>
+    <script src="../js/services/security.context.js" type="module"></script>
+    <script src="../js/login.js" type="module"></script>
+    <script src="../js/products.js" type="module"></script>
+  </body>
+</html>
