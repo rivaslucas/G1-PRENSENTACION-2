@@ -94,41 +94,73 @@
   <!-- Button trigger modal -->
 
   <!-- Modal -->
-  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">
-            <span class="badge rounded-pill text-bg-warning">Login</span>
-            Inicia Sesión
-          </h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="mb-3">
-            <label class="form-label" for="email">Email</label>
-            <input class="form-control" type="email" required id="email" placeholder="example@mail.com" maxlength="25"/>
+  <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header fondo2">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              <span class="badge rounded-pill text-bg-dark">Login</span>
+              Inicia Sesión
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-          <div class="mb-3">
-            <label class="form-label" for="password">Password</label>
-            <input class="form-control" type="password" required id="password" placeholder="Ingresa tu contraseña" maxlength="25"/>
-          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label class="form-label" for="email">Usuario</label>
+              <input
+                class="form-control"
+                type="email"
+                required
+                id="email"
+                placeholder="Ingresa tu usuario"
+                maxlength="25"
+              />
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="password">Password</label>
+              <input
+                class="form-control"
+                type="password"
+                required
+                id="password"
+                placeholder="Ingresa tu contraseña"
+                maxlength="25"
+              />
+            </div>
 
-          <div class="mb-3">
-            <a href="./register.html">No tienes cuenta? regístrate acá.</a>
+            <div class="mb-3">
+              <a href="./pages/register.html"
+                >No tienes cuenta? regístrate acá.</a
+              >
+            </div>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success" data-bs-dismiss="modal" id="close">
-            Cerrar
-          </button>
-          <button id="login" type="button" class="btn btn-warning">
-            Iniciar Sesión
-          </button>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-success"
+              data-bs-dismiss="modal"
+              id="close"
+            >
+              Cerrar
+            </button>
+            <button id="login" type="button" class="btn btn-warning">
+              Iniciar Sesión
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   <!--Login Modal-->
 
   <footer>
