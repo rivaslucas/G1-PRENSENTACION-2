@@ -60,10 +60,6 @@ async function refreshProducts() {
         decreaseButton.setAttribute('data-product-id', product.id);
         decreaseButton.classList.add('btn', 'btn-success', 'ms-1', 'me-1');
         
-        buyButton.innerText = 'Comprar';
-        buyButton.setAttribute('data-product-id', product.id);
-        buyButton.classList.add('btn', 'btn-primary', 'ms-1');
-
         tdActions.id = product.id;
         tdNameProduct.innerText = product.name;
         tdImg.innerHTML = `<img src="${product.picture}" class="card-img-top imagecart m-0" alt="no-image"> </img>`;
