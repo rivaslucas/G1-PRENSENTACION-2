@@ -153,7 +153,7 @@
           </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label class="form-label" for="email">Email</label>
+              <label class="form-label" for="email">Usuario</label>
               <input
                 class="form-control"
                 type="email"
@@ -520,35 +520,32 @@
           
           <div class="mb-3">
             <label for="createDescription">Descripción</label>
-            <textarea class="form-control" placeholder="Ingrese la descripción" id="createDescription"> maxlength="50"</textarea>
+            <textarea class="form-control" placeholder="Ingrese la descripción" id="createDescription" maxlength="50"></textarea>
           </div>
-          
+
           <div class="mb-3">
+            <label class="form-label" for="createPrice">Precio</label>
+            <input class="form-control" type="text" required id="createPrice" placeholder="Ingresa el precio" maxlength="8"/>
+          </div>
 
-            <div class="mb-3">
-              <label class="form-label" for="createPrice">Precio</label>
-              <input class="form-control" type="text" required id="createPrice" placeholder="Ingresa el precio" maxlength="8"/>
-            </div>
+          <div class="mb-3">
+            <label class="form-label" for="createPicture">Url de Imagen</label>
+            <input class="form-control" type="text" required id="createPicture" placeholder="Ingresa la url de la portada" maxlength="500"/>
+          </div>
 
-            <div class="mb-3">
-              <label class="form-label" for="createPicture">Url de Imagen</label>
-              <input class="form-control" type="text" required id="createPicture" placeholder="Ingresa la url de la portada" maxlength="500"/>
-            </div>
+          <div class="mb-3">
+            <label class="form-label" for="createDistributor">Distribuidor</label>
+            <input class="form-control" type="text" required id="createDistributor" placeholder="Ingrese el distribuidor" maxlength="25"/>
+          </div>
 
-            <div class="mb-3">
-              <label class="form-label" for="createDistributor">Distribuidor</label>
-              <input class="form-control" type="text" required id="createDistributor" placeholder="Ingrese el distribuidor" maxlength="25"/>
-            </div>
+          <div class="mb-3">
+            <label class="form-label" for="createQuantity">Cantidad</label>
+            <input class="form-control" id="createQuantity" type="number" max="100" min="0" step="1"/>
+          </div>
 
-            <div class="mb-3">
-              <label class="form-label" for="createQuantity">Cantidad</label>
-              <input class="form-control" id="createQuantity" type="number" max="100" min="0" step="1"/>
-            </div>
-
-            <div class="mb-3">
-              <label class="form-label" for="createCategory">Categoria</label>
-              <input class="form-control" type="text" required id="createCategory" placeholder="Ingrese la categoria" maxlength="25"/>
-            </div>
+          <div class="mb-3">
+            <label class="form-label" for="createCategory">Categoria</label>
+            <input class="form-control" type="text" required id="createCategory" placeholder="Ingrese la categoria" maxlength="25"/>
           </div>
 
           <div class="modal-footer">
@@ -564,55 +561,55 @@
 <!-- CREACION DE USUARIOS-->
 <div class="modal fade" id="createUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Usuario</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-              <form id="userAdd">
-                  <div class="mb-3">
-                      <label class="form-label" for="createUsername">Usuario</label>
-                      <input class="form-control" type="text" required id="createUsername" placeholder="Ingresa el nombre de usuario" maxlength="25"/>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label" for="createPass">Contraseña</label>
-                      <input class="form-control" type="password" required id="createPass" placeholder="Ingresa la contraseña" maxlength="25"/>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label" for="createRePass">Confirmar Contraseña</label>
-                      <input class="form-control" type="password" required id="createRePass" placeholder="Confirma la contraseña" maxlength="25"/>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label" for="createName">Nombre</label>
-                      <input class="form-control" type="text" required id="createName" placeholder="Ingresa el nombre" maxlength="25"/>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label" for="createLastname">Apellido</label>
-                      <input class="form-control" type="text" required id="createLastname" placeholder="Ingresa el apellido" maxlength="25"/>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label" for="createDirection">Dirección</label>
-                      <input class="form-control" type="text" id="createDirection" placeholder="Ingresa la dirección" maxlength="50"/>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label" for="createTel">Teléfono</label>
-                      <input class="form-control" type="tel"   pattern="[0-9]+" id="createTel" placeholder="Ingresa el teléfono" maxlength="15"/>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label" for="createRol">Rol</label>
-                      <select class="form-control" id="createRol">
-                          <option value="CLIENTE">Cliente</option>
-                          <option value="ADMIN">Administrador</option>
-                      </select>
-                  </div>
-                  <div class="modal-footer">
-                      <button data-bs-dismiss="modal" type="button" class="btn btn-success">Cancelar</button>
-                      <button type="submit" class="btn btn-warning" id="addUser">Guardar</button>
-                  </div>
-              </form>
-          </div>
+    <div class="modal-content">
+      <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Crear Usuario</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <div class="modal-body">
+        <form id="userAdd">
+          <div class="mb-3">
+              <label class="form-label" for="createUsername">Usuario</label>
+              <input class="form-control" type="text" required id="createUsername" placeholder="Ingresa el nombre de usuario" maxlength="25"/>
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="createPass">Contraseña</label>
+              <input class="form-control" type="password" required id="createPass" placeholder="Ingresa la contraseña" maxlength="25"/>
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="createRePass">Confirmar Contraseña</label>
+              <input class="form-control" type="password" required id="createRePass" placeholder="Confirma la contraseña" maxlength="25"/>
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="createName">Nombre</label>
+              <input class="form-control" type="text" required id="createName" placeholder="Ingresa el nombre" maxlength="25"/>
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="createLastname">Apellido</label>
+              <input class="form-control" type="text" required id="createLastname" placeholder="Ingresa el apellido" maxlength="25"/>
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="createDirection">Dirección</label>
+              <input class="form-control" type="text" id="createDirection" placeholder="Ingresa la dirección" maxlength="50"/>
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="createTel">Teléfono</label>
+              <input class="form-control" type="tel" pattern="[0-9]+" id="createTel" placeholder="Ingresa el teléfono" maxlength="15"/>
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="createRol">Rol</label>
+              <select class="form-control" id="createRol">
+                  <option value="CLIENTE">Cliente</option>
+                  <option value="ADMIN">Administrador</option>
+              </select>
+          </div>
+          <div class="modal-footer">
+              <button data-bs-dismiss="modal" type="button" class="btn btn-success">Cancelar</button>
+              <button type="submit" class="btn btn-warning" id="addUser">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 <!--CREACION DE USUARIOS-->
