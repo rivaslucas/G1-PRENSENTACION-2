@@ -256,7 +256,7 @@
         if (_createPass === _createRePass) {
           
           if (selectedRoleId === "ADMIN") {
-            if (!createUser(_createUsername, _createPass, _createName, _createLastname , INITIAL_ROLES.find((rol) => rol.id === 1), _createDirection, _createTel)) {
+            if (!createUser(_createUsername, _createPass, _createName, _createLastname , INITIAL_ROLES.find((rol) => rol.id === 1), _createDirection, _createTel,true)) {
         
             }
           } else {
