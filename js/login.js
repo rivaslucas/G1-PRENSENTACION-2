@@ -39,7 +39,7 @@ btnLogin.addEventListener("click", function () {
     setInterval(() => {
       const button = document.querySelector(".swal2-confirm");
       if (button === null) {
-        window.location.reload();
+        window.location.href="./pages/products.html";
       }
     }, 500);
   } else {
@@ -49,6 +49,6 @@ btnLogin.addEventListener("click", function () {
 
 btnLogout.addEventListener("click", function () {
   logout();
-  window.location.reload();
+  window.location.href="./pages/products.html";
 });
 //#endregion Events

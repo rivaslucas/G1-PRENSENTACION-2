@@ -39,11 +39,13 @@ function createUser(username, password, name, lastname, rol, direction, tel,init
 
     // Guardamos el array en el local storage
     SetItem(LOCAL_STORAGE_KEYS.user, users);
-    if(!init){
-       alert("usuario registrado con exito"); 
-    }
+    if (!init) {
+      alert("usuario registrado con exito");
+      window.location.href = "/pages/products.html";
+  }
   
-   
+  
+
   }
 }
 
