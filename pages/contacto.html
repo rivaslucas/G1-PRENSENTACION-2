@@ -17,7 +17,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <title>DISTRIMUNDO - PRODUCTO</title>
+  <title>DISTRIMUNDO - CONTACTO</title>
 </head>
 
 <body class="ancho p-0 m-0 fondo">
@@ -76,8 +76,8 @@
         </div>
       </div>
     </nav>
-
   </header>
+
   <main>
     <div class="container-fluid p-0">
       <div class="row">
@@ -89,32 +89,41 @@
 
     <div class="container-fluid">
       <div class="row contacto">
-        <div class="container-fluid col-sm-12 col-lg-6 mt-5 mb-5">
+        <div class="container-fluid col-sm-12 col-lg-6">
           <div class="row">
+            
             <div class="container-fluid col-12 text-center">
-              <h5 class="fuente mt-5 mb-5 text-center text-white">UBICACION DE NUESTRO LOCAL</h5>
+              <h5 class="fuente mt-5 mb-5 text-center text-white fondo2 p-2 rounded">UBICACION DE NUESTRO LOCAL</h5>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3544.010324854765!2d-65.60603809999999!3d-27.3441457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9423cf6e241052eb%3A0x130b8a4022f12938!2sSan%20Lorenzo%20%26%20Obispo%20Jos%C3%A9%20Colombres%2C%20Concepci%C3%B3n%2C%20Tucum%C3%A1n!5e0!3m2!1ses-419!2sar!4v1706648381690!5m2!1ses-419!2sar"
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>"
             </div>
-            <div class="container-fluid col-12 ms-5">
-              <h5 class="fuente mt-5 ms-5 text-white"> <img src="../img/contacto/ubicacion.jpg" alt="ubicacion"
-                  width="30" height="35">
-                Direccion San Lorenzo y Obispo Colombres - Concepción - Tucumán</h5>
-              <h5 class="fuente mt-5 ms-5 text-white"> <img src="../img/contacto/whatsapp.jpg" alt="ubicacion"
-                  width="30" height="35">
-                Escribinos a nuestro Whatsapp +54 9 381 995577</h5>
-              <h5 class="fuente mt-5 ms-5 text-white"> <img src="../img/contacto/email.jpg" alt="ubicacion" width="30"
-                  height="35">
-                Envíanos tu mensaje a info@distrimundo.com.ar</h5>
+
+            <div class="container-fluid col-12">
+              <div class="row">
+                <div class="col-2"></div>
+                <div class="container-fluid col-sm-12 col-lg-8 ms-4">
+                  <h5 class="fuente mt-5 text-white"> <img src="../img/contacto/ubicacion.jpg" alt="ubicacion"
+                      width="30" height="35">
+                    San Lorenzo y Obispo Colombres - Concepción - Tucumán</h5>
+                  <h5 class="fuente mt-5 text-white"> <img src="../img/contacto/whatsapp.jpg" alt="ubicacion"
+                      width="30" height="35">
+                    Podes escribinos a nuestro Whatsapp +54 9 381 99 5577</h5>
+                  <h5 class="fuente mt-5 text-white"> <img src="../img/contacto/email.jpg" alt="ubicacion" width="30"
+                      height="35">
+                    Podes enviarnos tus mensaje a info@distrimundo.com.ar</h5>
+                </div>
+                <div class="col-2"></div>
+              </div>
             </div>
+
           </div>
         </div>
 
         <div class="container-fluid col-sm-12 col-lg-6 p-5">
           <div class="rounded p-4 fondo2">
-            <h5 class="fuente mt-5 mb-5 text-center text-white">
+            <h5 class="fuente mt-1 mb-5 text-center text-white">
               SI TIENES DUDAS O NECESITAS INFORMACION, POR FAVOR, PÓNGASE EN CONTACTO CON NOSOTROS A TRAVES DEL
               SIGUIENTE FORMULARIO.
             </h5>
@@ -157,15 +166,15 @@
 
               <div class="mb-3">
                 <label for="txt_comentario" class="form-label text-white">Comentario:</label>
-                <textarea id="txt_comentario" class="form-control" required="True" maxlength="500"
+                <textarea id="txt_comentario" class="form-control" required="True" maxlength="250"
                   placeholder="Escriba su consulta" aria-describedby="comentHelp"></textarea>
                 <div id="comentHelp" class="form-text text-white">
-                  Escribir hasta 500 caracteres
+                  Escribir hasta 250 caracteres
                 </div>
               </div>
 
               <div class="mb-3">
-                <button class="btn btn-warning btn_search text-center" type="submit">Enviar</button>
+                <button class="btn btn-warning text-center text-white fw-bold" type="submit">Enviar</button>
               </div>
 
             </form>
@@ -191,11 +200,11 @@
         <div class="modal-body">
           <div class="mb-3">
             <label class="form-label" for="email">Email</label>
-            <input class="form-control" type="email" required id="email" placeholder="example@mail.com" />
+            <input class="form-control" type="email" required id="email" placeholder="example@mail.com" maxlength="25"/>
           </div>
           <div class="mb-3">
             <label class="form-label" for="password">Password</label>
-            <input class="form-control" type="password" required id="password" placeholder="Ingresa tu contraseña" />
+            <input class="form-control" type="password" required id="password" placeholder="Ingresa tu contraseña" maxlength="25" />
           </div>
 
           <div class="mb-3">

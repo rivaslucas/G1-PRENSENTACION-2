@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="author"
     content="Lucas Rivas - Jose Espinosa Borgia" />
-    <meta name="DISTRIMUNDO" content="Pagina de venta de articulos comostibles x mayor" />
+    <meta name="DISTRIMUNDO" content="Pagina de venta de articulos comestibles x mayor" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/index.css" rel="stylesheet" />
     <link href="../css/_styles.css" rel="stylesheet" />
@@ -81,15 +81,31 @@
       
     </header>
     <main class="mt-5">
-      <div id="searchContainer">
-        <input type="text" id="searchInput" placeholder="Buscar productos...">
-      </div>
-      <div class="container fluid" >
-        <div class="row" id="card-container">
+      <div class="container">
+        <div class="row ubic_ver">
           
+          <div class="container-fluid col" id="searchContainer">
+            <div class="container-fluid d-flex row fondo2 rounded m-2 p-2 fila-centro">
+              <div class="container-fluid col d-flex">
+                <h5 class="text-white m-2">Filtro de Productos:</h5>
+                <input type="text" id="searchInput" placeholder="Buscar productos..." maxlength="50" >
+              </div>
+            </div>
+          </div>
+          
+          <div class="container fluid col" >
+            <div class="row" id="card-container"> 
+            </div>
+          </div>
+
         </div>
       </div>
+<<<<<<< HEAD
+
+      <div id="notification" class="notification rounded">
+=======
       <div id="notification" class="notification">
+>>>>>>> 9d08e0ef2ad85cc1a377db9ccd82b298eb1c59bb
         Producto agregado
       </div>
       
@@ -128,6 +144,7 @@
                 required
                 id="email"
                 placeholder="example@mail.com"
+                maxlength="25"
               />
             </div>
             <div class="mb-3">
@@ -138,6 +155,7 @@
                 required
                 id="password"
                 placeholder="Ingresa tu contraseña"
+                maxlength="25"
               />
             </div>
 

@@ -5,7 +5,7 @@
     <meta name="author" content="Lucas Rivas - Jose Espinosa Borgia" />
     <meta
       name="DISTRIMUNDO"
-      content="Pagina de venta de articulos comostibles x mayor"
+      content="Pagina de venta de articulos comestibles x mayor"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="../css/index.css" rel="stylesheet" />
@@ -167,7 +167,7 @@
             </thead>
             <tbody id="product-table"></tbody>
           </table>
-          <div id="totalCompra" class="text-white" style="text-align: right;">
+          <div id="totalCompra" class="text-white margen-derecho">
             <strong>Total de la compra: $</strong>
             <span id="totalAmount">0.00</span>
            <a target="_blank"  id="buyCart"> <button type="button" class="btn btn-danger">Comprar</button></a>
@@ -210,6 +210,7 @@
                 required
                 id="email"
                 placeholder="example@mail.com"
+                maxlength="25"
               />
             </div>
             <div class="mb-3">
@@ -220,6 +221,7 @@
                 required
                 id="password"
                 placeholder="Ingresa tu contraseña"
+                maxlength="25"
               />
             </div>
 
@@ -244,7 +246,7 @@
       </div>
     </div>
     <!--Login Modal-->
-    <!-- Agrega esto al cuerpo de tu HTML -->
+    
     <div id="deleteModal" class="modal">
       <div class="modal-content">
         <p>¿Estás seguro de que deseas eliminar este producto de la lista?</p>
