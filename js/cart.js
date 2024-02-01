@@ -21,7 +21,10 @@ document.addEventListener('click', (e) => {
     // Botón de disminución
     const productId = e.target.getAttribute('data-product-id');
     decreaseQuantity(productId);
-  } 
+  } else if(e.target.classList.contains('btn-primary')){
+    //boton comprar
+    window.open("../pages/error404.html");
+  }
 });
 
 refresh(refreshProducts);
@@ -46,6 +49,7 @@ async function refreshProducts() {
         let tdActions = document.createElement("td");
         let increaseButton = document.createElement('button');
         let decreaseButton = document.createElement('button');
+        let buyButton = document.createElement('button');
 
 
         increaseButton.innerText = '+';
@@ -55,7 +59,7 @@ async function refreshProducts() {
         decreaseButton.innerText = '-';
         decreaseButton.setAttribute('data-product-id', product.id);
         decreaseButton.classList.add('btn', 'btn-success', 'ms-1', 'me-1');
-
+        
         tdActions.id = product.id;
         tdNameProduct.innerText = product.name;
         tdImg.innerHTML = `<img src="${product.picture}" class="card-img-top imagecart m-0" alt="no-image"> </img>`;
@@ -68,6 +72,7 @@ async function refreshProducts() {
     
         tdActions.appendChild(increaseButton);
         tdActions.appendChild(decreaseButton);
+        tdActions.appendChild(buyButton);
 
         tr.appendChild(tdNameProduct);
         tr.appendChild(tdImg);
@@ -295,5 +300,3 @@ Direccion:${domicilio}
   // Abrir enlace en una nueva ventana o pestaña
   window.open(`https://wa.me/543865210198?text=${mensajeCodificado}`, '_blank');
 });
-
-
