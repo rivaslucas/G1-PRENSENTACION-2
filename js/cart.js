@@ -60,10 +60,6 @@ async function refreshProducts() {
         decreaseButton.setAttribute('data-product-id', product.id);
         decreaseButton.classList.add('btn', 'btn-success', 'ms-1', 'me-1');
         
-        buyButton.innerText = 'Comprar';
-        buyButton.setAttribute('data-product-id', product.id);
-        buyButton.classList.add('btn', 'btn-primary', 'ms-1');
-
         tdActions.id = product.id;
         tdNameProduct.innerText = product.name;
         tdImg.innerHTML = `<img src="${product.picture}" class="card-img-top imagecart m-0" alt="no-image"> </img>`;
@@ -249,4 +245,58 @@ function actualizarTotalCompra() {
   }
 }
 
-// ...
+document.getElementById('buyCart').addEventListener('click', function() {
+  const usuarioLogueado = JSON.parse(localStorage.getItem('UsuarioLoggeado'));
+
+  if (!usuarioLogueado) {
+    alert('Por favor, inicia sesión antes de realizar un pedido.');
+    return;
+  }
+
+  const fecha = new Date().toLocaleDateString();
+  const cliente = usuarioLogueado.name;
+  const domicilio=usuarioLogueado.direction;
+
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  if (cart.length === 0) {
+    alert('El carrito está vacío. Agrega productos antes de realizar un pedido.');
+    return;
+  }
+
+  // Construir el mensaje de WhatsApp con la información del carrito
+  let mensaje = `*******
+Fecha: ${fecha}
+Cliente: ${cliente}
+Direccion:${domicilio}
+**PEDIDO**
+`;
+
+  // Agrupar productos por proveedor
+  const productosPorProveedor = {};
+  cart.forEach((item) => {
+    if (!productosPorProveedor[item.distributor]) {
+      productosPorProveedor[item.distributor] = [];
+    }
+    productosPorProveedor[item.distributor].push(`${item.quantity} - ${item.name} x ${item.price} -------- $${item.quantity * item.price}`);
+  });
+
+  // Agregar los productos al mensaje
+  Object.keys(productosPorProveedor).forEach((proveedor) => {
+    mensaje += `*${proveedor}*\n${productosPorProveedor[proveedor].join('\n')}\n\n`;
+  });
+
+  // Calcular el total del pedido
+  const totalPedido = cart.reduce((total, item) => total + (item.quantity * item.price), 0);
+
+  mensaje += `TOTAL                       $${totalPedido}`;
+
+  // Reemplazar espacios con %20 y caracteres especiales
+  const mensajeCodificado = encodeURIComponent(mensaje);
+
+  // Construir el enlace de WhatsApp con el mensaje
+
+
+  // Abrir enlace en una nueva ventana o pestaña
+  window.open(`https://wa.me/543865210198?text=${mensajeCodificado}`, '_blank');
+});

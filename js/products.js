@@ -93,9 +93,9 @@ function updateCartUI() {
 
 function getHtmlCard(picture, id, name, price, distributor, quantity, category) {
   
-  return `<div class="col-ms-12 col-md-6 col-lg-3 mb-3" >
-            <div class="card carta shadow border-light style="width: 30rem;">
-              <img src="${picture}" class="card-img-top img-fluid" alt="img producto" style="width: 30rem;"/>
+  return `<div class="col-ms-12 col-md-6 col-lg-3 mb-3"  >
+          <div class="card carta shadow border-light text-center ">
+              <img src="${picture}" class="card-img-top img-fluid" alt="img producto" />
               <div class="card-body text-center">
                 <h5 class="card-title fuente m-0 negrita">Producto: ${name}</h5>
                 <p class="card-text m-0">Distribuidor: ${distributor}</p>
@@ -109,7 +109,7 @@ function getHtmlCard(picture, id, name, price, distributor, quantity, category) 
           </div>`;
 
 }
-
+// ... (código existente)
 
 function displayProducts(productsToDisplay) {
   let htmlString = "";
@@ -129,6 +129,11 @@ function displayProducts(productsToDisplay) {
 
   divContainer.innerHTML = htmlString;
 
+  // Calcular la altura mínima en función del número de productos
+  const minHeight = Math.max(300, productsToDisplay.length * 150); // Ajusta según sea necesario
+
+  divContainer.style.minHeight = `${minHeight}px`;
+
   productsToDisplay.forEach((product) => {
     const addProductToCartBtn = document.getElementById(`productAddCart_${product.id}`);
     if (addProductToCartBtn) {
@@ -138,6 +143,37 @@ function displayProducts(productsToDisplay) {
     }
   });
 }
+
+// ... (código existente)
+
+
+// function displayProducts(productsToDisplay) {
+//   let htmlString = "";
+//   divContainer.innerHTML = "";
+
+//   productsToDisplay.forEach((product) => {
+//     htmlString += getHtmlCard(
+//       product.picture,
+//       product.id,
+//       product.name,
+//       product.price,
+//       product.distributor,
+//       product.quantity,
+//       product.category
+//     );
+//   });
+
+//   divContainer.innerHTML = htmlString;
+
+//   productsToDisplay.forEach((product) => {
+//     const addProductToCartBtn = document.getElementById(`productAddCart_${product.id}`);
+//     if (addProductToCartBtn) {
+//       addProductToCartBtn.addEventListener("click", () => {
+//         addToCart(product);
+//       });
+//     }
+//   });
+// }
 
 function handleSearchInput() {
   const searchInput = document.getElementById("searchInput");

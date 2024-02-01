@@ -19,26 +19,14 @@
 
 #searchInput {
   padding: 10px;
-  width: 60%; /* Reducimos el ancho del input */
+  width: 200%; /* Reducimos el ancho del input */
+  min-width: 250px;
   border: 1px solid #ccc;
   border-radius: 10px; /* Hacemos más redondo el borde del input */
   font-size: 16px;
 }
 
-#searchButton {
-  padding: 10px 15px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 10px; /* Hacemos más redondo el botón */
-  cursor: pointer;
-  font-size: 16px;
-  margin-left: 10px; /* Agregamos un margen a la izquierda del botón */
-}
 
-#searchButton:hover {
-  background-color: #218838;
-}
 .carta .card-img-top {
   width: 100%; /* Ajusta el ancho según tus necesidades */
   height: auto; /* Esto permite mantener la proporción de la imagen */
@@ -58,6 +46,20 @@ flex-direction: row;
 justify-content: space-around;
 justify-items: center;
 width: "100%";
+}
+
+.margen-derecho {
+display: flex;
+flex-direction: row;
+justify-content: right;
+align-items: center;
+}
+
+.margen-centrado {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .fondo {
@@ -359,6 +361,12 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.fila-centro {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
