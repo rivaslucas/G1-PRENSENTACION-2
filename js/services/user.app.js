@@ -30,7 +30,7 @@ function isUserExist(username) {
   }
   return false;
 }
-function createUser(username, password, name, lastname, rol, direction, tel) {
+function createUser(username, password, name, lastname, rol, direction, tel,init) {
   let us= getUsers();
   let id=us.length;
   if (!isUserExist(username)) {
@@ -39,7 +39,10 @@ function createUser(username, password, name, lastname, rol, direction, tel) {
 
     // Guardamos el array en el local storage
     SetItem(LOCAL_STORAGE_KEYS.user, users);
-    alert("usuario registrado con exito");
+    if(!init){
+       alert("usuario registrado con exito"); 
+    }
+  
    
   }
 }
@@ -52,7 +55,8 @@ function createUserRolCommon(username, password, name, lastname, direction, tel)
     lastname,
     INITIAL_ROLES.find((rol) => rol.id === ROLES_VALUES.CLIENTE),
     direction,
-    tel
+    tel,
+    false
   );
 }
 function updateUser(
