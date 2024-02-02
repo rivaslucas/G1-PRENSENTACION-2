@@ -95,18 +95,20 @@
     function cargarJS() {
       // Obtener los parámetros de la URL
       const urlParams = new URLSearchParams(window.location.search);
-      
+      const datosCodificados = urlParams.get('datos');
+      const datosDecodificados= datosCodificados ? JSON.parse(atob(datosCodificados)) :[];
+      console.log(datosDecodificados);
       // Obtener los datos del usuario desde los parámetros de la URL
       const usuarioLoggeado = {
-        name: urlParams.get('nombre') || 'No proporcionado',
-        tel: urlParams.get('telefono') || 'No proporcionado',
-        direction: urlParams.get('direccion') || 'No proporcionado',
+        fecha:datosDecodificados.usuario.fecha,
+        name: datosDecodificados.usuario.cliente || 'No proporcionado',
+        tel: datosDecodificados.usuario.telefono || 'No proporcionado',
+        direction:datosDecodificados.usuario.domicilio || 'No proporcionado',
       };
-  
+  console.log(usuarioLoggeado);
       // Obtener y decodificar los datos del carrito desde la URL
-      const carritoCodificado = urlParams.get('carrito');
-      const carrito = carritoCodificado ? JSON.parse(decodeURIComponent(carritoCodificado)) : [];
-  
+      
+      const carrito = datosDecodificados.carrito;
       const productosPorProveedor = {};
   
       // Organizar productos por proveedor
@@ -121,6 +123,7 @@
       function generarPresupuestoHTML() {
         let html = `
           <h1>Presupuesto</h1>
+          <p>Fecha:${usuarioLoggeado.fecha}</p>
           <h2>Datos del Usuario:</h2>
           <p>Nombre: ${usuarioLoggeado.name}</p>
           <p>Teléfono: ${usuarioLoggeado.tel}</p>
