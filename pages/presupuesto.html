@@ -71,7 +71,7 @@
       }
 
       .totalProveedor {
-        -webkit-print-color-adjust: exact; /* Mantener el color al imprimir en Chrome/Safari */
+        /* -webkit-print-color-adjust: exact; Mantener el color al imprimir en Chrome/Safari */
         color: black !important;
         background-color: #4caf50 !important; /* Mantener el fondo verde al imprimir */
       }
@@ -96,11 +96,13 @@
       // Obtener los parámetros de la URL
       const urlParams = new URLSearchParams(window.location.search);
       const datosCodificados = urlParams.get('datos');
-      const datosDecodificados= datosCodificados ? JSON.parse(atob(datosCodificados)) :[];
-      console.log(datosDecodificados);
+console.log('Datos Codificados:', datosCodificados);
+
+let datosDecodificados = datosCodificados ? JSON.parse(atob(datosCodificados)) : null;
+console.log('Datos Decodificados:', datosDecodificados);
       // Obtener los datos del usuario desde los parámetros de la URL
       const usuarioLoggeado = {
-        fecha:datosDecodificados.usuario.fecha,
+        fecha: datosDecodificados.usuario.fecha || 'No proporcionado',
         name: datosDecodificados.usuario.cliente || 'No proporcionado',
         tel: datosDecodificados.usuario.telefono || 'No proporcionado',
         direction:datosDecodificados.usuario.domicilio || 'No proporcionado',
