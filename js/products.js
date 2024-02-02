@@ -109,7 +109,7 @@ function getHtmlCard(picture, id, name, price, distributor, quantity, category) 
           </div>`;
 
 }
-// ... (código existente)
+
 
 function displayProducts(productsToDisplay) {
   let htmlString = "";
@@ -143,37 +143,6 @@ function displayProducts(productsToDisplay) {
     }
   });
 }
-
-// ... (código existente)
-
-
-// function displayProducts(productsToDisplay) {
-//   let htmlString = "";
-//   divContainer.innerHTML = "";
-
-//   productsToDisplay.forEach((product) => {
-//     htmlString += getHtmlCard(
-//       product.picture,
-//       product.id,
-//       product.name,
-//       product.price,
-//       product.distributor,
-//       product.quantity,
-//       product.category
-//     );
-//   });
-
-//   divContainer.innerHTML = htmlString;
-
-//   productsToDisplay.forEach((product) => {
-//     const addProductToCartBtn = document.getElementById(`productAddCart_${product.id}`);
-//     if (addProductToCartBtn) {
-//       addProductToCartBtn.addEventListener("click", () => {
-//         addToCart(product);
-//       });
-//     }
-//   });
-// }
 
 function handleSearchInput() {
   const searchInput = document.getElementById("searchInput");

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generar Presupuesto</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff; /* Fondo blanco */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #contenido-pdf {
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      text-align: left; /* Alinear el texto a la izquierda */
+    }
+
+    header {
+      background-color: #f9a825; /* Amarillo */
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    h1, h2, h3 {
+      color: #f9a825; /* Amarillo */
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    #btnImprimir {
+      background-color: #f9a825; /* Amarillo */
+      color: rgb(17, 2, 2);
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: large;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #f57f17; /* Amarillo oscuro */
+    }
+    .totalProveedor {
+      font-weight: bold;
+      background-color: #4caf50; /* Verde resaltador */
+      color: black;
+      padding: 2px; /* Añadir espacio alrededor del texto */
+    }
+    @media print {
+      #btnImprimir {
+        display: none;
+      }
+
+      .totalProveedor {
+        -webkit-print-color-adjust: exact; /* Mantener el color al imprimir en Chrome/Safari */
+        color: black !important;
+        background-color: #4caf50 !important; /* Mantener el fondo verde al imprimir */
+      }
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+  <div id="contenido-pdf">
+    <!-- Contenido de tu presupuesto -->
+    <h1>Presupuesto</h1>
+
+    <!-- Botón para imprimir la página -->
+  </div>
+
+  <script>
+    // Variable global para almacenar la instancia de jsPDF
+  
+    function cargarJS() {
+      // Obtener los parámetros de la URL
+      const urlParams = new URLSearchParams(window.location.search);
+      
+      // Obtener los datos del usuario desde los parámetros de la URL
+      const usuarioLoggeado = {
+        name: urlParams.get('nombre') || 'No proporcionado',
+        tel: urlParams.get('telefono') || 'No proporcionado',
+        direction: urlParams.get('direccion') || 'No proporcionado',
+      };
+  
+      // Obtener y decodificar los datos del carrito desde la URL
+      const carritoCodificado = urlParams.get('carrito');
+      const carrito = carritoCodificado ? JSON.parse(decodeURIComponent(carritoCodificado)) : [];
+  
+      const productosPorProveedor = {};
+  
+      // Organizar productos por proveedor
+      carrito.forEach((producto) => {
+        const proveedor = producto.distributor;
+        if (!productosPorProveedor[proveedor]) {
+          productosPorProveedor[proveedor] = [];
+        }
+        productosPorProveedor[proveedor].push(producto);
+      });
+  
+      function generarPresupuestoHTML() {
+        let html = `
+          <h1>Presupuesto</h1>
+          <h2>Datos del Usuario:</h2>
+          <p>Nombre: ${usuarioLoggeado.name}</p>
+          <p>Teléfono: ${usuarioLoggeado.tel}</p>
+          <p>Dirección: ${usuarioLoggeado.direction}</p>
+          <h2>Detalles del Carrito:</h2>
+        `;
+  
+        let totalGeneral = 0;
+  
+        for (const proveedor in productosPorProveedor) {
+          let totalProveedor = 0;
+  
+          html += `<h3>${proveedor}</h3>`;
+          html += "<ul>";
+  
+          productosPorProveedor[proveedor].forEach((producto) => {
+            const subtotal = producto.quantity * producto.price;
+            totalProveedor += subtotal;
+            totalGeneral += subtotal;
+  
+            html += `<li>${producto.quantity} - ${producto.name} x ${producto.price} = $${subtotal}</li>`;
+          });
+  
+          html += `<li class="totalProveedor">Total del proveedor ${proveedor}: $${totalProveedor}</li>`;
+          html += "</ul>";
+        }
+  
+        html += `<h2>Total General: $${totalGeneral}</h2>`;
+        html += '<button id="btnImprimir" onclick="imprimirPagina()">Imprimir</button>';
+  
+        document.getElementById("contenido-pdf").innerHTML = html;
+      }
+  
+      // Cargar jsPDF después de que el documento esté completamente cargado
+      const scriptJS = document.createElement('script');
+      scriptJS.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js';
+      scriptJS.onload = function() {
+        // La carga de jsPDF está completa
+        // Ahora puedes definir la función generarPDF
+      };
+  
+      document.head.appendChild(scriptJS);
+  
+      generarPresupuestoHTML();
+    }
+  
+    function imprimirPagina() {
+      window.print();
+    }
+  
+    // Esperar a que el DOM esté completamente cargado antes de ejecutar cargarJS
+    document.addEventListener('DOMContentLoaded', cargarJS);
+  </script>
+  
+</body>
+</html>
