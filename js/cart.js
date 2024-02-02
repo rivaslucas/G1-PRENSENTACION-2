@@ -320,11 +320,14 @@ function enviarMensajeWhatsapp(usuarioLogueado) {
   // Codificar datos en base64
   const datosCodificados = btoa(JSON.stringify(datosUsuarioCarrito));
 
-  // Construir la URL de WhatsApp
-  const urlWhatsapp = `https://wa.me/543865210198?text=${encodeURIComponent(`https://https://distrymundo.netlify.app/presupuesto?datos=${datosCodificados}`)}`;
+  
 
+  // Construir el enlace de WhatsApp con la URL del presupuesto codificada
+  const urlWhatsapp = `https://wa.me/543865210198?text=${encodeURIComponent(`¡Hola! Aquí está mi presupuesto: https://distrymundo.netlify.app/pages/presupuesto?datos=${datosCodificados}`)}`;
+  
   // Abrir enlace en una nueva ventana o pestaña
   window.open(urlWhatsapp, '_blank');
+
 }
 
 // Llama a la función cuando sea necesario
