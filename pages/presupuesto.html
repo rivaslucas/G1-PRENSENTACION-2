@@ -94,10 +94,14 @@
       // Obtener los parámetros de la URL
       const urlParams = new URLSearchParams(window.location.search);
       const datosCodificados = urlParams.get('datos');
-console.log('Datos Codificados:', datosCodificados);
+      let datosDecodificados;
 
-let datosDecodificados = datosCodificados ? JSON.parse(atob(datosCodificados)) : null;
-console.log('Datos Decodificados:', datosDecodificados);
+      try {
+   datosDecodificados = datosCodificados? JSON.parse(atob(datosCodificados)) : null;
+  console.log('Datos Decodificados:', datosDecodificados);
+} catch (error) {
+  console.error('Error during decoding:', error.message);
+}
       // Obtener los datos del usuario desde los parámetros de la URL
       const usuarioLoggeado = {
         fecha: datosDecodificados.usuario.fecha || 'No proporcionado',
