@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      margin: 0;
+      margin: 5%;
       padding: 0;
       background-color: #fff; /* Fondo blanco */
       display: flex;
@@ -31,6 +31,11 @@
       color: white;
       text-align: center;
       padding: 1em;
+    }
+    h1 {
+      margin-top: 10%;
+      color: #f9a825 !important;
+      display: block;
     }
 
     h1, h2, h3 {
@@ -82,7 +87,7 @@
 <body>
   <div id="contenido-pdf">
     <!-- Contenido de tu presupuesto -->
-    <h1>Presupuesto</h1>
+    
 
     <!-- Botón para imprimir la página -->
   </div>
@@ -93,7 +98,7 @@
     function cargarJS() {
       // Obtener los parámetros de la URL
       const urlParams = new URLSearchParams(window.location.search);
-      const datosCodificados = urlParams.get('datos');
+      const datosCodificados = window.location.search.match(/datos=([^&]+)/)[1];
       let datosDecodificados;
 
       try {
@@ -126,7 +131,7 @@
   
       function generarPresupuestoHTML() {
         let html = `
-          <h1>Presupuesto</h1>
+          <h1>Presupueste</h1>
           <p>Fecha:${usuarioLoggeado.fecha}</p>
           <h2>Datos del Usuario:</h2>
           <p>Nombre: ${usuarioLoggeado.name}</p>
