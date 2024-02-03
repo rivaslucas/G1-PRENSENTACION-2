@@ -3,6 +3,7 @@ import { INITIAL_ROLES, PRODUCTS } from "../configurations/seed.js";
 import { LocalStorageLength, SetItem } from "./local-storage.app.js";
 import { createUser, login, logout } from "./user.app.js";
 
+
 // Obtén la bandera datosBorrados del localStorage
 const datosBorrados = localStorage.getItem('datosBorrados');
 
@@ -17,6 +18,7 @@ if (datosBorrados === 'true') {
 
 // Luego, carga los datos si es necesario
 if (LocalStorageLength <=1||LocalStorageLength>=2) {
+
   SetItem(LOCAL_STORAGE_KEYS.roles, INITIAL_ROLES);
   SetItem(LOCAL_STORAGE_KEYS.product, PRODUCTS);
   createUser(

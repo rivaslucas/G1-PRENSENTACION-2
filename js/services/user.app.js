@@ -33,6 +33,9 @@ function isUserExist(username) {
 function createUser(username, password, name, lastname, rol, direction, tel,init) {
   let us= getUsers();
   let id=us.length;
+  if (init){
+
+  
   if (!isUserExist(username)) {
     const newUser = { id, username, password, name, lastname, rol, direction, tel };
     let users = getArrayAndReplace(newUser);
@@ -48,7 +51,7 @@ function createUser(username, password, name, lastname, rol, direction, tel,init
 
   }
 }
-
+}
 function createUserRolCommon(username, password, name, lastname, direction, tel) {
   createUser(
     username,
@@ -58,7 +61,8 @@ function createUserRolCommon(username, password, name, lastname, direction, tel)
     INITIAL_ROLES.find((rol) => rol.id === ROLES_VALUES.CLIENTE),
     direction,
     tel,
-    false
+    false,
+
   );
 }
 function updateUser(
