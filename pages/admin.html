@@ -82,7 +82,7 @@
     </header>
     <main>
 
-    <div class="container-fluid">
+    <div class="container-fluid mt-5">
     <section class="container fluid center">
       <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#createModal"> Agregar Productos </button>
     </section>
@@ -139,9 +139,9 @@
     >
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
+          <div class="modal-header fondo2">
             <h1 class="modal-title fs-5" id="exampleModalLabel">
-              <span class="badge rounded-pill text-bg-warning">Login</span>
+              <span class="badge rounded-pill text-bg-dark">Login</span>
               Inicia Sesión
             </h1>
             <button
@@ -159,7 +159,7 @@
                 type="email"
                 required
                 id="email"
-                placeholder="example@mail.com"
+                placeholder="Ingresa tu usuario"
                 maxlength="25"
               />
             </div>
@@ -176,7 +176,9 @@
             </div>
 
             <div class="mb-3">
-              <a href="./register.html">No tienes cuenta? regístrate acá.</a>
+              <a href="./pages/register.html"
+                >No tienes cuenta? regístrate acá.</a
+              >
             </div>
           </div>
           <div class="modal-footer">
@@ -312,51 +314,51 @@
    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header fondo2">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar Producto</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body fondo2">
           
           <div class="mb-3">
-            <label class="form-label" for="name">Nombre</label>
+            <label class="form-label text-white" for="name">Nombre</label>
             <input class="form-control" type="text" required id="name" placeholder="Ingrese el nombre del producto" maxlength="25"/>
           </div>
           
           <div class="mb-3">
-            <label for="description">Descripción</label>
+            <label for="description" class="form-label text-white">Descripción</label>
             <textarea class="form-control" placeholder="Ingrese la descripción del producto" id="description" maxlength="250"></textarea>
           </div>
           
           <div class="mb-3">
-            <label class="form-label" for="price">Precio</label>
+            <label class="form-label text-white" for="price">Precio</label>
             <textarea class="form-control" placeholder="Ingrese el precio del producto" id="price" maxlength="8"></textarea>
           </div>
 
           <div class="mb-3">
             
             <div class="mb-3">
-              <label class="form-label" for="picture">Url de Imagen</label>
+              <label class="form-label text-white" for="picture">Url de Imagen</label>
               <input class="form-control" type="text" required id="picture" placeholder="Ingrese la url de la imagen" maxlength="500"/>
             </div>
 
             <div class="mb-3">
-              <label class="form-label" for="distributor">Distribuidor</label>
+              <label class="form-label text-white" for="distributor">Distribuidor</label>
               <input class="form-control" type="text" required id="distributor" placeholder="Ingrese el distribuidor" maxlength="25"/>
             </div>
 
             <div class="mb-3">
-              <label class="form-label" for="quantity">Cantidad</label>
+              <label class="form-label text-white" for="quantity">Cantidad</label>
               <input class="form-control" id="quantity" type="number" max="100" min="0" step="1"/>
             </div>
 
             <div class="mb-3">
-              <label class="form-label" for="category">Categoria</label>
+              <label class="form-label text-white" for="category">Categoria</label>
               <input class="form-control" type="text" required id="category" placeholder="Ingrese la categoria" maxlength="25"/>
             </div>
 
           </div>
-          <div class="modal-footer">
+          <div class="modal-footer fondo2 rounded">
             <button data-bs-dismiss="modal" type="button" class="btn btn-success" id="notUpdate"> Cancelar </button>
             <button type="button" class="btn btn-warning" id="updateProduct"> Guardar </button>
           </div>
@@ -413,7 +415,7 @@
   >
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header fondo2">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar Usuario</h1>
           <button
             type="button"
@@ -422,10 +424,10 @@
             aria-label="Close"
           ></button>
         </div>
-        <form  id="updateUserConfirm">
+        <form  id="updateUserConfirm" class="fondo2">
           <div class="modal-body">
           <div class="mb-3">
-            <label class="form-label" for="updateUsername">Username</label>
+            <label class="form-label text-white" for="updateUsername">Nombre de Usuario</label>
             <input
               class="form-control"
               type="text"
@@ -436,7 +438,7 @@
             />
           </div>
           <div class="mb-3">
-            <label for="updatePass">Password</label>
+            <label for="updatePass" class="form-label text-white">Password</label>
             <input
             type="password"
               class="form-control"
@@ -447,7 +449,7 @@
           </div>
           <div class="mb-3">
             <div class="mb-3">
-              <label class="form-label" for="updateName">Name</label>
+              <label class="form-label text-white" for="updateName">Nombre</label>
               <input
                 class="form-control"
                 type="text"
@@ -458,7 +460,7 @@
               />
             </div>
             <div class="mb-3">
-              <label for="updateLastname">Lastname</label>
+              <label for="updateLastname" class="form-label text-white" >Apellido</label>
               <input
                 class="form-control"
                 id="updateLastname"
@@ -468,18 +470,18 @@
               />
             </div>
             <div class="mb-3">
-              <label for="Rol">Rol</label>
+              <label for="Rol" class="form-label text-white">Rol</label>
               <select class="form-control" id="updateRol">
                 <option value="CLIENTE">Cliente</option>
                 <option value="ADMIN">Administrador</option>
             </select>
             </div>
             <div class="mb-3">
-              <label class="form-label" for="updateDirection">Direction</label>
+              <label class="form-label text-white" for="updateDirection">Dirección</label>
               <input class="form-control" type="text" id="updateDirection" placeholder="Ingresa la dirección" maxlength="50"/>
           </div>
           <div class="mb-3">
-              <label class="form-label" for="updateTel">Teléfono</label>
+              <label class="form-label text-white" for="updateTel">Teléfono</label>
               <input class="form-control" type="tel"  pattern="[0-9]+" id="updateTel" placeholder="Ingresa el teléfono" maxlength="15"/>
           </div>
           </div>
@@ -644,7 +646,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/services/init.app.js" type="module"></script>
+    <!-- <script src="../js/services/init.app.js" type="module"></script> -->
     <script src="../js/services/security.context.js" type="module"></script>
     <script src="../js/login.js" type="module"></script>
     <script src="../js/admin.js" type="module"></script>

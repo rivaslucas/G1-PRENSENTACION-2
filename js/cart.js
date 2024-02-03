@@ -245,6 +245,7 @@ function actualizarTotalCompra() {
   }
 }
 
+
 document.getElementById('buyCart').addEventListener('click', function() {
   const usuarioLogueado = JSON.parse(localStorage.getItem('UsuarioLoggeado'));
 
@@ -253,9 +254,7 @@ document.getElementById('buyCart').addEventListener('click', function() {
     return;
   }
 
-  const fecha = new Date().toLocaleDateString();
-  const cliente = usuarioLogueado.name;
-  const domicilio=usuarioLogueado.direction;
+  
 
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -263,40 +262,73 @@ document.getElementById('buyCart').addEventListener('click', function() {
     alert('El carrito está vacío. Agrega productos antes de realizar un pedido.');
     return;
   }
+enviarMensajeWhatsapp(usuarioLogueado);
+//   // Construir el mensaje de WhatsApp con la información del carrito
+//   let mensaje = `*******
+// Fecha: ${fecha}
+// Cliente: ${cliente}
+// Direccion:${domicilio}
+// Telefono:${telefono}
+// **PEDIDO**
+// `;
 
-  // Construir el mensaje de WhatsApp con la información del carrito
-  let mensaje = `*******
-Fecha: ${fecha}
-Cliente: ${cliente}
-Direccion:${domicilio}
-**PEDIDO**
-`;
+//   // Agrupar productos por proveedor
+//   const productosPorProveedor = {};
+//   cart.forEach((item) => {
+//     if (!productosPorProveedor[item.distributor]) {
+//       productosPorProveedor[item.distributor] = [];
+//     }
+//     productosPorProveedor[item.distributor].push(`${item.quantity} - ${item.name} x ${item.price} -------- $${item.quantity * item.price}`);
+//   });
 
-  // Agrupar productos por proveedor
-  const productosPorProveedor = {};
-  cart.forEach((item) => {
-    if (!productosPorProveedor[item.distributor]) {
-      productosPorProveedor[item.distributor] = [];
-    }
-    productosPorProveedor[item.distributor].push(`${item.quantity} - ${item.name} x ${item.price} -------- $${item.quantity * item.price}`);
-  });
+//   // Agregar los productos al mensaje
+//   Object.keys(productosPorProveedor).forEach((proveedor) => {
+//     mensaje += `*${proveedor}*\n${productosPorProveedor[proveedor].join('\n')}\n\n`;
+//   });
 
-  // Agregar los productos al mensaje
-  Object.keys(productosPorProveedor).forEach((proveedor) => {
-    mensaje += `*${proveedor}*\n${productosPorProveedor[proveedor].join('\n')}\n\n`;
-  });
+//   // Calcular el total del pedido
+//   const totalPedido = cart.reduce((total, item) => total + (item.quantity * item.price), 0);
 
-  // Calcular el total del pedido
-  const totalPedido = cart.reduce((total, item) => total + (item.quantity * item.price), 0);
+//   mensaje += `TOTAL                       $${totalPedido}`;
 
-  mensaje += `TOTAL                       $${totalPedido}`;
+//   // Reemplazar espacios con %20 y caracteres especiales
+//   const mensajeCodificado = encodeURIComponent(mensaje);
 
-  // Reemplazar espacios con %20 y caracteres especiales
-  const mensajeCodificado = encodeURIComponent(mensaje);
-
-  // Construir el enlace de WhatsApp con el mensaje
+//   // Construir el enlace de WhatsApp con el mensaje
 
 
-  // Abrir enlace en una nueva ventana o pestaña
-  window.open(`https://wa.me/543865210198?text=${mensajeCodificado}`, '_blank');
+//   // Abrir enlace en una nueva ventana o pestaña
+//   window.open(`https://wa.me/543865210198?text=${mensajeCodificado}`, '_blank');
 });
+function enviarMensajeWhatsapp(usuarioLogueado) {
+  const datosUsuario = {
+     fecha: new Date().toLocaleDateString(),
+    cliente: usuarioLogueado.name,
+    domicilio: usuarioLogueado.direction,
+     telefono: usuarioLogueado.tel,
+  };
+
+  const cart= JSON.parse(localStorage.getItem('cart')) || [];
+  
+
+  // Combinar datos del usuario y carrito en un objeto
+  const datosUsuarioCarrito = {
+    usuario: datosUsuario,
+    carrito: cart,
+  };
+
+  // Codificar datos en base64
+  const datosCodificados = btoa(JSON.stringify(datosUsuarioCarrito));
+
+  
+
+  // Construir el enlace de WhatsApp con la URL del presupuesto codificada
+  const urlWhatsapp = `https://wa.me/543865210198?text=${encodeURIComponent(`¡Hola! Aquí está mi presupuesto: https://distrymundo.netlify.app/pages/presupuesto.html?datos=${datosCodificados}`)}`;
+  
+  // Abrir enlace en una nueva ventana o pestaña
+  window.open(urlWhatsapp, '_blank');
+
+}
+
+// Llama a la función cuando sea necesario
+// enviarMensajeWhatsapp();

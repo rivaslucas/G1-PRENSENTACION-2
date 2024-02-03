@@ -42,8 +42,13 @@ function createUser(username, password, name, lastname, rol, direction, tel,init
 
     // Guardamos el array en el local storage
     SetItem(LOCAL_STORAGE_KEYS.user, users);
-    alert("usuario registrado con exito");
-   
+    if(!init){
+       alert("usuario registrado con exito"); 
+       window.location.href = "/pages/products.html";
+
+    }
+  
+
   }
 }
 }
@@ -56,7 +61,8 @@ function createUserRolCommon(username, password, name, lastname, direction, tel)
     INITIAL_ROLES.find((rol) => rol.id === ROLES_VALUES.CLIENTE),
     direction,
     tel,
-    true,
+    false,
+
   );
 }
 function updateUser(

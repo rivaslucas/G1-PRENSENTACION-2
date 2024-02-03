@@ -26,6 +26,19 @@
   font-size: 16px;
 }
 
+.contacto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.contacto2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 
 .carta .card-img-top {
   width: 100%; /* Ajusta el ancho según tus necesidades */

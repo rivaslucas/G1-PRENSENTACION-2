@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     if (addUserForm) {
       addUserForm.addEventListener("submit", function (e) {
-     
+        e.preventDefault();
     // Evitar el comportamiento predeterminado del formulario
   
        
